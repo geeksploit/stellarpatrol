@@ -41,6 +41,11 @@ public class DifficultyScreen implements Screen {
     @Override
     public void resize(int width, int height) {
         extendViewport.update(width, height, true);
+        float x = extendViewport.getWorldWidth() / 4;
+        float y = extendViewport.getWorldHeight() / 2;
+        easyCenter.set(x, y);
+        mediumCenter.set(x * 2, y);
+        hardCenter.set(x * 3, y);
     }
 
     @Override
