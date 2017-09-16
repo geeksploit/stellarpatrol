@@ -1,6 +1,8 @@
 package com.shootan.stellarpatrol.util;
 
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.utils.Array;
 
 /**
  * Created by geeksploit on 16.09.2017.
@@ -13,4 +15,11 @@ public class Constants {
     public static final Color EASY_COLOR = new Color(0.2f, 0.5f, 1, 0.5f);
     public static final Color MEDIUM_COLOR = new Color(0.5f, 0.75f, 1, 0.5f);
     public static final Color HARD_COLOR = new Color(0.7f, 1f, 1, 0.5f);
+
+    public static final Array<Texture> BACKGROUND = new Array<Texture>() {{
+        add(new Texture("backgrounds/background_0.jpg"));
+        add(new Texture("backgrounds/background_1.jpg"));
+        add(new Texture("backgrounds/background_2.jpg"));
+        add(new Texture("backgrounds/background_3.jpg"));
+    }};
 }
