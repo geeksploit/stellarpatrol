@@ -5,5 +5,7 @@ package com.shootan.stellarpatrol.util;
  */
 
 public class Constants {
-
+    public static final float DIFFICULTY_WORLD_SIZE = 480.0f;
+    public static final float DIFFICULTY_BUBBLE_RADIUS = DIFFICULTY_WORLD_SIZE / 9;
+    public static final float DIFFICULTY_LABEL_SCALE = 1.5f;
 }
