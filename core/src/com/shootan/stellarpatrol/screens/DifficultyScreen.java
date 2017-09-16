@@ -42,6 +42,12 @@ public class DifficultyScreen implements Screen {
     @Override
     public void render(float delta) {
         extendViewport.apply();
+
+        spriteBatch.setProjectionMatrix(extendViewport.getCamera().combined);
+        spriteBatch.begin();
+
+        spriteBatch.end();
+
         shapeRenderer.setProjectionMatrix(extendViewport.getCamera().combined);
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
         {
