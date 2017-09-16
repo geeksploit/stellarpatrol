@@ -50,7 +50,9 @@ public class DifficultyScreen implements Screen {
 
         spriteBatch.setProjectionMatrix(extendViewport.getCamera().combined);
         spriteBatch.begin();
-
+        {
+            spriteBatch.draw(background, 0, 0, extendViewport.getWorldWidth(), extendViewport.getWorldHeight());
+        }
         spriteBatch.end();
 
         shapeRenderer.setProjectionMatrix(extendViewport.getCamera().combined);
