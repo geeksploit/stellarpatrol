@@ -42,8 +42,11 @@ public class DifficultyScreen implements Screen {
         shapeRenderer.setProjectionMatrix(extendViewport.getCamera().combined);
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
         {
+            shapeRenderer.setColor(Constants.EASY_COLOR);
             shapeRenderer.circle(easyCenter.x, easyCenter.y, Constants.DIFFICULTY_BUBBLE_RADIUS);
+            shapeRenderer.setColor(Constants.MEDIUM_COLOR);
             shapeRenderer.circle(mediumCenter.x, mediumCenter.y, Constants.DIFFICULTY_BUBBLE_RADIUS);
+            shapeRenderer.setColor(Constants.HARD_COLOR);
             shapeRenderer.circle(hardCenter.x, hardCenter.y, Constants.DIFFICULTY_BUBBLE_RADIUS);
         }
         shapeRenderer.end();
