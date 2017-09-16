@@ -40,7 +40,7 @@ public class DifficultyScreen implements Screen {
 
     @Override
     public void resize(int width, int height) {
-
+        extendViewport.update(width, height, true);
     }
 
     @Override
