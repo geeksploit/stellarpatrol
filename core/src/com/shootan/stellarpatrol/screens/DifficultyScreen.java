@@ -1,6 +1,7 @@
 package com.shootan.stellarpatrol.screens;
 
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.math.Vector2;
 import com.shootan.stellarpatrol.StellarPatrolGame;
 
 /**
@@ -10,6 +11,10 @@ import com.shootan.stellarpatrol.StellarPatrolGame;
 public class DifficultyScreen implements Screen {
 
     private StellarPatrolGame game;
+
+    private Vector2 easyCenter;
+    private Vector2 mediumCenter;
+    private Vector2 hardCenter;
 
     public DifficultyScreen(StellarPatrolGame game) {
         this.game = game;
