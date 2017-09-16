@@ -2,6 +2,7 @@ package com.shootan.stellarpatrol.screens;
 
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector2;
@@ -26,6 +27,7 @@ public class DifficultyScreen implements Screen {
     private SpriteBatch spriteBatch;
 
     private Texture background;
+    private BitmapFont bitmapFont;
 
     public DifficultyScreen(StellarPatrolGame game) {
         this.game = game;
@@ -42,6 +44,9 @@ public class DifficultyScreen implements Screen {
         spriteBatch = new SpriteBatch();
 
         background = Constants.BACKGROUND.random();
+        bitmapFont = new BitmapFont();
+        bitmapFont.getData().setScale(Constants.DIFFICULTY_LABEL_SCALE);
+        bitmapFont.getRegion().getTexture().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
     }
 
     @Override
