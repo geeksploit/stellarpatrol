@@ -22,7 +22,9 @@ public class DifficultyScreen implements Screen {
 
     @Override
     public void show() {
-
+        easyCenter = new Vector2();
+        mediumCenter = new Vector2();
+        hardCenter = new Vector2();
     }
 
     @Override
