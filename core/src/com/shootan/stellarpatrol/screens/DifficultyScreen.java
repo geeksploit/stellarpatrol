@@ -9,7 +9,10 @@ import com.shootan.stellarpatrol.StellarPatrolGame;
 
 public class DifficultyScreen implements Screen {
 
+    private StellarPatrolGame game;
+
     public DifficultyScreen(StellarPatrolGame game) {
+        this.game = game;
     }
 
     @Override
