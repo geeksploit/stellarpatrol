@@ -7,6 +7,7 @@ public class StellarPatrolGame extends Game {
 
 	@Override
 	public void create() {
+		showDifficultyScreen();
 	}
 
 	public void showDifficultyScreen() {
