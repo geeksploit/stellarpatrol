@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.shootan.stellarpatrol.StellarPatrolGame;
 import com.shootan.stellarpatrol.util.Constants;
@@ -71,6 +72,21 @@ public class DifficultyScreen implements Screen {
             shapeRenderer.circle(hardCenter.x, hardCenter.y, Constants.DIFFICULTY_BUBBLE_RADIUS);
         }
         shapeRenderer.end();
+
+        spriteBatch.begin();
+        {
+            float halfCapHeight = bitmapFont.getCapHeight() / 2;
+            bitmapFont.draw(spriteBatch, Constants.EASY_LABEL,
+                    easyCenter.x, easyCenter.y + halfCapHeight,
+                    0, Align.center, false);
+            bitmapFont.draw(spriteBatch, Constants.MEDIUM_LABEL,
+                    mediumCenter.x, mediumCenter.y + halfCapHeight,
+                    0, Align.center, false);
+            bitmapFont.draw(spriteBatch, Constants.HARD_LABEL,
+                    hardCenter.x, hardCenter.y + halfCapHeight,
+                    0, Align.center, false);
+        }
+        spriteBatch.end();
     }
 
     @Override
