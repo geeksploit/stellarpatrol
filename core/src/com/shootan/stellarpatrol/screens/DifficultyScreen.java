@@ -4,6 +4,7 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.shootan.stellarpatrol.StellarPatrolGame;
+import com.shootan.stellarpatrol.util.Constants;
 
 /**
  * Created by geeksploit on 16.09.2017.
@@ -28,6 +29,8 @@ public class DifficultyScreen implements Screen {
         easyCenter = new Vector2();
         mediumCenter = new Vector2();
         hardCenter = new Vector2();
+
+        extendViewport = new ExtendViewport(Constants.DIFFICULTY_WORLD_SIZE, Constants.DIFFICULTY_WORLD_SIZE);
     }
 
     @Override
