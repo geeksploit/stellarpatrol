@@ -1,6 +1,7 @@
 package com.shootan.stellarpatrol.screens;
 
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
@@ -21,6 +22,7 @@ public class DifficultyScreen implements Screen {
 
     private ExtendViewport extendViewport;
     private ShapeRenderer shapeRenderer;
+    private SpriteBatch spriteBatch;
 
     public DifficultyScreen(StellarPatrolGame game) {
         this.game = game;
@@ -34,6 +36,7 @@ public class DifficultyScreen implements Screen {
 
         extendViewport = new ExtendViewport(Constants.DIFFICULTY_WORLD_SIZE, Constants.DIFFICULTY_WORLD_SIZE);
         shapeRenderer = new ShapeRenderer();
+        spriteBatch = new SpriteBatch();
     }
 
     @Override
