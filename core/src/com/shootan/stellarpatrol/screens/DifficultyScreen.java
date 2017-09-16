@@ -120,6 +120,9 @@ public class DifficultyScreen implements Screen {
 
     @Override
     public void dispose() {
-
+        shapeRenderer.dispose();
+        spriteBatch.dispose();
+        background.dispose();
+        bitmapFont.dispose();
     }
 }
