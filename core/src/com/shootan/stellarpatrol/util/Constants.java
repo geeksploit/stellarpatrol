@@ -15,6 +15,9 @@ public class Constants {
     public static final Color EASY_COLOR = new Color(0.2f, 0.5f, 1, 0.5f);
     public static final Color MEDIUM_COLOR = new Color(0.5f, 0.75f, 1, 0.5f);
     public static final Color HARD_COLOR = new Color(0.7f, 1f, 1, 0.5f);
+    public static final String EASY_LABEL = "Rookie";
+    public static final String MEDIUM_LABEL = "Cadet";
+    public static final String HARD_LABEL = "Captain";
 
     public static final Array<Texture> BACKGROUND = new Array<Texture>() {{
         add(new Texture("backgrounds/background_0.jpg"));
