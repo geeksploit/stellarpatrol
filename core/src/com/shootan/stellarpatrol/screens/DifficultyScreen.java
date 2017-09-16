@@ -69,11 +69,11 @@ public class DifficultyScreen implements Screen {
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
         {
             shapeRenderer.setColor(Constants.EASY_COLOR);
-            shapeRenderer.circle(easyCenter.x, easyCenter.y, Constants.DIFFICULTY_BUBBLE_RADIUS);
+            shapeRenderer.circle(easyCenter.x, easyCenter.y, Constants.DIFFICULTY_BUBBLE_RADIUS, 50);
             shapeRenderer.setColor(Constants.MEDIUM_COLOR);
-            shapeRenderer.circle(mediumCenter.x, mediumCenter.y, Constants.DIFFICULTY_BUBBLE_RADIUS);
+            shapeRenderer.circle(mediumCenter.x, mediumCenter.y, Constants.DIFFICULTY_BUBBLE_RADIUS, 50);
             shapeRenderer.setColor(Constants.HARD_COLOR);
-            shapeRenderer.circle(hardCenter.x, hardCenter.y, Constants.DIFFICULTY_BUBBLE_RADIUS);
+            shapeRenderer.circle(hardCenter.x, hardCenter.y, Constants.DIFFICULTY_BUBBLE_RADIUS, 50);
         }
         shapeRenderer.end();
 
