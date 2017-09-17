@@ -1,5 +1,6 @@
 package com.shootan.stellarpatrol.gameobjects;
 
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 
 /**
@@ -9,6 +10,7 @@ import com.badlogic.gdx.math.Vector2;
 public abstract class GameObject {
 
     private Vector2 position;
+    private TextureRegion textureRegion;
 
     public GameObject(Vector2 position) {
         this.position = position;
@@ -20,5 +22,9 @@ public abstract class GameObject {
 
     public void setPosition(Vector2 position) {
         this.position = position;
+    }
+
+    public void setTextureRegion(TextureRegion textureRegion) {
+        this.textureRegion = textureRegion;
     }
 }
