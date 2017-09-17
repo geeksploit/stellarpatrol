@@ -11,5 +11,9 @@ public abstract class Bullet extends GameObject {
 
     public Bullet(Vector2 position, float angle) {
         super(position);
+        setAcceleration(new Vector2());
+        setVelocity(new Vector2(0, 5));
+        getVelocity().setAngle(angle);
+        setScale(.4f);
     }
 }
