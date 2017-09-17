@@ -11,4 +11,8 @@ import com.shootan.stellarpatrol.gameobjects.GameObject;
 public interface Weapon {
 
     Array<GameObject> shoot(float deltaTime, Vector2 parentPosition, float parentAngle);
+
+    void setReloadCooldown(float reloadCooldown);
+
+    float getReloadCooldown();
 }
