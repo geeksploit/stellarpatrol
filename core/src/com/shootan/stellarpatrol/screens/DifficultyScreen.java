@@ -140,6 +140,8 @@ public class DifficultyScreen extends InputAdapter implements Screen {
             game.setDifficulty(Constants.Difficulty.MEDIUM);
         } else if (touch.dst(hardCenter) < Constants.DIFFICULTY_BUBBLE_RADIUS) {
             game.setDifficulty(Constants.Difficulty.HARD);
+        } else {
+            hit = false;
         }
 
         return hit;
