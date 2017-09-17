@@ -133,6 +133,15 @@ public class DifficultyScreen extends InputAdapter implements Screen {
     public boolean touchUp(int screenX, int screenY, int pointer, int button) {
         Vector2 touch = extendViewport.unproject(new Vector2(screenX, screenY));
         boolean hit = true;
+
+        if (touch.dst(easyCenter) < Constants.DIFFICULTY_BUBBLE_RADIUS) {
+            game.setDifficulty(Constants.Difficulty.EASY);
+        } else if (touch.dst(mediumCenter) < Constants.DIFFICULTY_BUBBLE_RADIUS) {
+            game.setDifficulty(Constants.Difficulty.MEDIUM);
+        } else if (touch.dst(hardCenter) < Constants.DIFFICULTY_BUBBLE_RADIUS) {
+            game.setDifficulty(Constants.Difficulty.HARD);
+        }
+
         return hit;
     }
 }
