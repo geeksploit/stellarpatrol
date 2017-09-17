@@ -144,6 +144,10 @@ public class DifficultyScreen extends InputAdapter implements Screen {
             hit = false;
         }
 
+        if (hit) {
+            game.setCombatScreen();
+        }
+
         return hit;
     }
 }
