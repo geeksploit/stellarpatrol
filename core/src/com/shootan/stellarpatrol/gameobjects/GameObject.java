@@ -48,4 +48,9 @@ public abstract class GameObject {
     public void setVelocity(Vector2 velocity) {
         this.velocity = velocity;
     }
+
+    public void setScale(float scaleX, float scaleY) {
+        this.scaleX = scaleX;
+        this.scaleY = scaleY;
+    }
 }
