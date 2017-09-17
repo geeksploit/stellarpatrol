@@ -8,6 +8,9 @@ import com.shootan.stellarpatrol.StellarPatrolGame;
 
 public class CombatScreen {
 
+    private StellarPatrolGame game;
+
     public CombatScreen(StellarPatrolGame game) {
+        this.game = game;
     }
 }
