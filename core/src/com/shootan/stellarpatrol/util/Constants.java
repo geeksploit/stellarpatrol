@@ -21,6 +21,8 @@ public class Constants {
 
     public static final float WORLD_SIZE = 10;
 
+    public static final float BULLET_MAX_VELOCITY = 10f;
+
     private static final float HARD_SPAWN_COOLDOWN = .075f;
     private static final float MEDIUM_SPAWN_COOLDOWN = HARD_SPAWN_COOLDOWN / 2;
     private static final float EASY_SPAWN_COOLDOWN = MEDIUM_SPAWN_COOLDOWN / 2;
