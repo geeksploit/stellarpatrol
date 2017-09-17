@@ -1,5 +1,6 @@
 package com.shootan.stellarpatrol.equipment.weapons;
 
+import com.badlogic.gdx.math.Matrix3;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 import com.shootan.stellarpatrol.gameobjects.GameObject;
@@ -17,4 +18,6 @@ public interface Weapon {
     float getReloadCooldown();
 
     void setBulletClass(Class bulletClass);
+
+    Matrix3 getOriginTransformMatrix();
 }
