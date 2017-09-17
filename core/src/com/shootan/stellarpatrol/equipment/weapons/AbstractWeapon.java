@@ -15,6 +15,8 @@ abstract class AbstractWeapon implements Weapon {
     private Class bulletClass;
     private Matrix3 originTransformMatrix;
 
+    private float reloadCooldownTimeout;
+
     AbstractWeapon() {
     }
 
@@ -45,6 +47,11 @@ abstract class AbstractWeapon implements Weapon {
     }
 
     private boolean isReadyToShoot(float deltaTime) {
+        reloadCooldownTimeout -= deltaTime;
+        if (reloadCooldownTimeout < 0) {
+            reloadCooldownTimeout = reloadCooldown;
+            return true;
+        }
         return false;
     }
 }
