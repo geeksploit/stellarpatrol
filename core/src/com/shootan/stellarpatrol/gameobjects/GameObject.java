@@ -9,6 +9,7 @@ import com.badlogic.gdx.math.Vector2;
 
 public abstract class GameObject {
 
+    private Vector2 acceleration;
     private Vector2 position;
     private TextureRegion textureRegion;
 
@@ -26,5 +27,13 @@ public abstract class GameObject {
 
     public void setTextureRegion(TextureRegion textureRegion) {
         this.textureRegion = textureRegion;
+    }
+
+    public Vector2 getAcceleration() {
+        return acceleration;
+    }
+
+    public void setAcceleration(Vector2 acceleration) {
+        this.acceleration = acceleration;
     }
 }
