@@ -21,6 +21,10 @@ public class Constants {
 
     public static final float WORLD_SIZE = 10;
 
+    private static final float HARD_SPAWN_COOLDOWN = .075f;
+    private static final float MEDIUM_SPAWN_COOLDOWN = HARD_SPAWN_COOLDOWN / 2;
+    private static final float EASY_SPAWN_COOLDOWN = MEDIUM_SPAWN_COOLDOWN / 2;
+
     public static final Array<Texture> BACKGROUND = new Array<Texture>() {{
         add(new Texture("backgrounds/background_0.jpg"));
         add(new Texture("backgrounds/background_1.jpg"));
