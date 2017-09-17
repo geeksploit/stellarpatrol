@@ -12,6 +12,7 @@ import com.shootan.stellarpatrol.gameobjects.GameObject;
 abstract class AbstractWeapon implements Weapon {
 
     private float reloadCooldown;
+    private Class bulletClass;
 
     AbstractWeapon() {
     }
@@ -33,7 +34,7 @@ abstract class AbstractWeapon implements Weapon {
 
     @Override
     public void setBulletClass(Class bulletClass) {
-
+        this.bulletClass = bulletClass;
     }
 
     @Override
