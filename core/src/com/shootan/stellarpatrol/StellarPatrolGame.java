@@ -8,14 +8,14 @@ public class StellarPatrolGame extends Game {
 
 	@Override
 	public void create() {
-		showDifficultyScreen();
+		setDifficultyScreen();
 	}
 
 	public void setCombatScreen() {
 		setScreen(new CombatScreen(this));
 	}
 
-	public void showDifficultyScreen() {
+	public void setDifficultyScreen() {
 		setScreen(new DifficultyScreen(this));
 	}
 }
