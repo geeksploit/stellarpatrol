@@ -43,4 +43,8 @@ abstract class AbstractWeapon implements Weapon {
     public Matrix3 getOriginTransformMatrix() {
         return originTransformMatrix;
     }
+
+    private boolean isReadyToShoot(float deltaTime) {
+        return false;
+    }
 }
