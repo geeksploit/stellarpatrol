@@ -132,6 +132,7 @@ public class DifficultyScreen extends InputAdapter implements Screen {
     @Override
     public boolean touchUp(int screenX, int screenY, int pointer, int button) {
         Vector2 touch = extendViewport.unproject(new Vector2(screenX, screenY));
-        return super.touchUp(screenX, screenY, pointer, button);
+        boolean hit = true;
+        return hit;
     }
 }
