@@ -26,6 +26,12 @@ public class Constants {
     private static final float EASY_SPAWN_COOLDOWN = MEDIUM_SPAWN_COOLDOWN / 2;
 
     public enum Difficulty {
+        EASY(EASY_SPAWN_COOLDOWN, EASY_LABEL),
+        MEDIUM(MEDIUM_SPAWN_COOLDOWN, MEDIUM_LABEL),
+        HARD(HARD_SPAWN_COOLDOWN, HARD_LABEL);
+
+        Difficulty(float spawnRate, String label) {
+        }
     }
 
     public static final Array<Texture> BACKGROUND = new Array<Texture>() {{
