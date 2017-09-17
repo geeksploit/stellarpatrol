@@ -1,6 +1,7 @@
 package com.shootan.stellarpatrol.screens;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
@@ -17,7 +18,7 @@ import com.shootan.stellarpatrol.util.Constants;
  * Created by geeksploit on 16.09.2017.
  */
 
-public class DifficultyScreen implements Screen {
+public class DifficultyScreen extends InputAdapter implements Screen {
 
     private StellarPatrolGame game;
 
@@ -38,6 +39,8 @@ public class DifficultyScreen implements Screen {
 
     @Override
     public void show() {
+        Gdx.input.setInputProcessor(this);
+
         easyCenter = new Vector2();
         mediumCenter = new Vector2();
         hardCenter = new Vector2();
@@ -124,5 +127,27 @@ public class DifficultyScreen implements Screen {
         spriteBatch.dispose();
         background.dispose();
         bitmapFont.dispose();
+    }
+
+    @Override
+    public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+        Vector2 touch = extendViewport.unproject(new Vector2(screenX, screenY));
+        boolean hit = true;
+
+        if (touch.dst(easyCenter) < Constants.DIFFICULTY_BUBBLE_RADIUS) {
+            game.setDifficulty(Constants.Difficulty.EASY);
+        } else if (touch.dst(mediumCenter) < Constants.DIFFICULTY_BUBBLE_RADIUS) {
+            game.setDifficulty(Constants.Difficulty.MEDIUM);
+        } else if (touch.dst(hardCenter) < Constants.DIFFICULTY_BUBBLE_RADIUS) {
+            game.setDifficulty(Constants.Difficulty.HARD);
+        } else {
+            hit = false;
+        }
+
+        if (hit) {
+            game.setCombatScreen();
+        }
+
+        return hit;
     }
 }

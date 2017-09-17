@@ -4,7 +4,11 @@ import com.badlogic.gdx.Game;
 import com.shootan.stellarpatrol.screens.CombatScreen;
 import com.shootan.stellarpatrol.screens.DifficultyScreen;
 
+import static com.shootan.stellarpatrol.util.Constants.Difficulty;
+
 public class StellarPatrolGame extends Game {
+
+	private Difficulty difficulty;
 
 	@Override
 	public void create() {
@@ -18,4 +22,12 @@ public class StellarPatrolGame extends Game {
 	public void setDifficultyScreen() {
 		setScreen(new DifficultyScreen(this));
 	}
+
+    public Difficulty getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(Difficulty difficulty) {
+        this.difficulty = difficulty;
+    }
 }

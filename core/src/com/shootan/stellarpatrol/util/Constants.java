@@ -21,6 +21,32 @@ public class Constants {
 
     public static final float WORLD_SIZE = 10;
 
+    private static final float HARD_SPAWN_COOLDOWN = .075f;
+    private static final float MEDIUM_SPAWN_COOLDOWN = HARD_SPAWN_COOLDOWN / 2;
+    private static final float EASY_SPAWN_COOLDOWN = MEDIUM_SPAWN_COOLDOWN / 2;
+
+    public enum Difficulty {
+        EASY(EASY_SPAWN_COOLDOWN, EASY_LABEL),
+        MEDIUM(MEDIUM_SPAWN_COOLDOWN, MEDIUM_LABEL),
+        HARD(HARD_SPAWN_COOLDOWN, HARD_LABEL);
+
+        public float enemySpawnCooldown;
+        public float powerupSpawnCooldown;
+        public float trapSpawnCooldown;
+        public float asteroidSpawnCooldown;
+        public float bossSpawnCooldown;
+        public String label;
+
+        Difficulty(float spawnRate, String label) {
+            this.enemySpawnCooldown = spawnRate;
+            this.powerupSpawnCooldown = spawnRate / 20;
+            this.trapSpawnCooldown = spawnRate / 5;
+            this.asteroidSpawnCooldown = spawnRate / 5;
+            this.bossSpawnCooldown = spawnRate / 100;
+            this.label = label;
+        }
+    }
+
     public static final Array<Texture> BACKGROUND = new Array<Texture>() {{
         add(new Texture("backgrounds/background_0.jpg"));
         add(new Texture("backgrounds/background_1.jpg"));
