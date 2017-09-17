@@ -20,7 +20,8 @@ abstract class AbstractWeapon implements Weapon {
 
     @Override
     public Array<GameObject> shoot(float deltaTime, Vector2 parentPosition, float parentAngle) {
-        return null;
+        Array<GameObject> bullets = new Array<GameObject>();
+        return bullets;
     }
 
     @Override
