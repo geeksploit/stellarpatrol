@@ -12,6 +12,9 @@ public abstract class GameObject {
     private Vector2 acceleration;
     private Vector2 velocity;
     private Vector2 position;
+
+    private float scaleX;
+    private float scaleY;
     private TextureRegion textureRegion;
 
     public GameObject(Vector2 position) {
