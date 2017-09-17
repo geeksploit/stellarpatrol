@@ -5,4 +5,7 @@ package com.shootan.stellarpatrol.equipment.weapons;
  */
 
 abstract class AbstractWeapon implements Weapon {
+
+    AbstractWeapon() {
+    }
 }
