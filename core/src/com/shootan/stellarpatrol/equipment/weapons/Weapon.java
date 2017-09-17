@@ -15,4 +15,6 @@ public interface Weapon {
     void setReloadCooldown(float reloadCooldown);
 
     float getReloadCooldown();
+
+    void setBulletClass(Class bulletClass);
 }
