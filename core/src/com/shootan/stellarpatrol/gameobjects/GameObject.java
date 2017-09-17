@@ -8,6 +8,9 @@ import com.badlogic.gdx.math.Vector2;
 
 public abstract class GameObject {
 
+    private Vector2 position;
+
     public GameObject(Vector2 position) {
+        this.position = position;
     }
 }
