@@ -38,6 +38,12 @@ public class Constants {
         public String label;
 
         Difficulty(float spawnRate, String label) {
+            this.enemySpawnCooldown = spawnRate;
+            this.powerupSpawnCooldown = spawnRate / 20;
+            this.trapSpawnCooldown = spawnRate / 5;
+            this.asteroidSpawnCooldown = spawnRate / 5;
+            this.bossSpawnCooldown = spawnRate / 100;
+            this.label = label;
         }
     }
 
