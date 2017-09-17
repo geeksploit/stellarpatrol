@@ -22,4 +22,12 @@ public class StellarPatrolGame extends Game {
 	public void setDifficultyScreen() {
 		setScreen(new DifficultyScreen(this));
 	}
+
+    public Difficulty getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(Difficulty difficulty) {
+        this.difficulty = difficulty;
+    }
 }
