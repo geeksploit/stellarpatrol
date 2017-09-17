@@ -19,6 +19,8 @@ public class Constants {
     public static final String MEDIUM_LABEL = "Cadet";
     public static final String HARD_LABEL = "Captain";
 
+    public static final float WORLD_SIZE = 10;
+
     public static final Array<Texture> BACKGROUND = new Array<Texture>() {{
         add(new Texture("backgrounds/background_0.jpg"));
         add(new Texture("backgrounds/background_1.jpg"));
