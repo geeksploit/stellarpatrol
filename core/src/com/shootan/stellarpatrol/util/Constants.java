@@ -30,6 +30,13 @@ public class Constants {
         MEDIUM(MEDIUM_SPAWN_COOLDOWN, MEDIUM_LABEL),
         HARD(HARD_SPAWN_COOLDOWN, HARD_LABEL);
 
+        public float enemySpawnCooldown;
+        public float powerupSpawnCooldown;
+        public float trapSpawnCooldown;
+        public float asteroidSpawnCooldown;
+        public float bossSpawnCooldown;
+        public String label;
+
         Difficulty(float spawnRate, String label) {
         }
     }
