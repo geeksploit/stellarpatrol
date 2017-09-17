@@ -34,7 +34,7 @@ public class CombatScreen implements Screen {
 
     @Override
     public void render(float delta) {
-
+        combatViewport.apply();
     }
 
     @Override
