@@ -13,6 +13,7 @@ abstract class AbstractWeapon implements Weapon {
 
     private float reloadCooldown;
     private Class bulletClass;
+    private Matrix3 originTransformMatrix;
 
     AbstractWeapon() {
     }
@@ -39,6 +40,6 @@ abstract class AbstractWeapon implements Weapon {
 
     @Override
     public Matrix3 getOriginTransformMatrix() {
-        return null;
+        return originTransformMatrix;
     }
 }
