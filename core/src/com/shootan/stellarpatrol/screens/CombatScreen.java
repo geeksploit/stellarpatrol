@@ -35,6 +35,11 @@ public class CombatScreen implements Screen {
     @Override
     public void render(float delta) {
         combatViewport.apply();
+
+        spriteBatch.setProjectionMatrix(combatViewport.getCamera().combined);
+        spriteBatch.begin();
+
+        spriteBatch.end();
     }
 
     @Override
