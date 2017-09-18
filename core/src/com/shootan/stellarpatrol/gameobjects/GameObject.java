@@ -71,4 +71,8 @@ public abstract class GameObject {
     public void draw(SpriteBatch spriteBatch) {
 
     }
+
+    private float getAspectRatio() {
+        return textureRegion.getRegionWidth() / textureRegion.getRegionHeight();
+    }
 }
