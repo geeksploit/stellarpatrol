@@ -1,5 +1,6 @@
 package com.shootan.stellarpatrol.gameobjects;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 
@@ -19,6 +20,8 @@ public abstract class GameObject {
     private TextureRegion textureRegion;
 
     public GameObject(Vector2 position) {
+        this.acceleration = new Vector2();
+        this.velocity = new Vector2();
         this.position = position;
     }
 
@@ -65,5 +68,23 @@ public abstract class GameObject {
 
     public void setRotation(float rotation) {
         this.rotation = rotation;
+    }
+
+    public void update(float deltaTime) {
+        getVelocity().mulAdd(getAcceleration(), deltaTime);
+        getPosition().mulAdd(getVelocity(), deltaTime);
+    }
+
+    public void draw(SpriteBatch spriteBatch) {
+        spriteBatch.draw(textureRegion, position.x - .5f, position.y - .5f, .5f, .5f, 1, 1,
+                getAspectRatio() * scaleX, scaleY, getTextureRotation());
+    }
+
+    private float getAspectRatio() {
+        return (float) textureRegion.getRegionWidth() / textureRegion.getRegionHeight();
+    }
+
+    private float getTextureRotation() {
+        return rotation - 90;
     }
 }
