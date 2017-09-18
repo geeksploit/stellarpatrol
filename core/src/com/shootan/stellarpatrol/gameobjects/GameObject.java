@@ -20,6 +20,8 @@ public abstract class GameObject {
     private TextureRegion textureRegion;
 
     public GameObject(Vector2 position) {
+        this.acceleration = new Vector2();
+        this.velocity = new Vector2();
         this.position = position;
     }
 
