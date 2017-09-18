@@ -34,6 +34,11 @@ abstract class AbstractWeapon implements Weapon {
         reloadCooldownTimeout = reloadCooldown / 2;
     }
 
+    public AbstractWeapon(float reloadCooldown, Matrix3 originTransformMatrix) {
+        this(reloadCooldown);
+        this.originTransformMatrix = originTransformMatrix;
+    }
+
     @Override
     public Array<GameObject> shoot(float deltaTime, Vector2 parentPosition, float parentAngle) {
         bullets.clear();
