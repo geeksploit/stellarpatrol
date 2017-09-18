@@ -41,10 +41,13 @@ public class CombatScreen implements Screen {
     public void render(float delta) {
         combatViewport.apply();
 
+        gameObjectsContainer.update(delta);
+
         spriteBatch.setProjectionMatrix(combatViewport.getCamera().combined);
         spriteBatch.begin();
         {
             spriteBatch.draw(backgroundTexture, 0, 0, combatViewport.getWorldWidth(), combatViewport.getWorldHeight());
+            gameObjectsContainer.draw(spriteBatch);
         }
         spriteBatch.end();
     }
