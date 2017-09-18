@@ -13,4 +13,10 @@ public final class GameObjectsContainer {
     public GameObjectsContainer() {
         gameObjects = new DelayedRemovalArray<GameObject>();
     }
+
+    public void update (float deltaTime) {
+        for (int i = 0; i < gameObjects.size; i++) {
+            gameObjects.get(i).update(deltaTime);
+        }
+    }
 }
