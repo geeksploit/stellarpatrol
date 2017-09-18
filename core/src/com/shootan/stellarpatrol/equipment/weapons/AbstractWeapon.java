@@ -15,15 +15,16 @@ abstract class AbstractWeapon implements Weapon {
     private float reloadCooldown;
     private Class bulletClass;
     private Matrix3 originTransformMatrix;
-
+    private Array<GameObject> bullets;
     private float reloadCooldownTimeout;
 
     AbstractWeapon() {
+         bullets = new Array<GameObject>();
     }
 
     @Override
     public Array<GameObject> shoot(float deltaTime, Vector2 parentPosition, float parentAngle) {
-        Array<GameObject> bullets = new Array<GameObject>();
+        bullets.clear();
         if (isReadyToShoot(deltaTime)) {
             bullets.addAll(BulletFactory.getInstance().makeBullets(bulletClass, parentPosition, parentAngle));
         }
