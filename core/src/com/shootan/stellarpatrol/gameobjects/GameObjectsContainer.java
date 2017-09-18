@@ -5,4 +5,7 @@ package com.shootan.stellarpatrol.gameobjects;
  */
 
 public final class GameObjectsContainer {
+
+    public GameObjectsContainer() {
+    }
 }
