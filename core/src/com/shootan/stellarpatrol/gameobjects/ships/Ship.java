@@ -33,4 +33,12 @@ public abstract class Ship extends GameObject {
     public void addWeapons(Weapon...weapons) {
         this.weapons.addAll(weapons);
     }
+
+    public Array<Bullet> shootWeapons(float deltaTime) {
+        bullets.clear();
+        for (int i = 0; i < weapons.size; i++) {
+            bullets.addAll(weapons.get(i).shoot(deltaTime, getPosition(), getRotation()));
+        }
+        return bullets;
+    }
 }
