@@ -12,5 +12,6 @@ public final class Player extends Ship {
     public Player(Vector2 position) {
         super(position);
         setTextureRegion(Constants.SHIP_TEXTURE_REGIONS.get(0));
+        setScale(1);
     }
 }
