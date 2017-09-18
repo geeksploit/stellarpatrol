@@ -14,6 +14,7 @@ public final class Player extends Ship {
         super(position);
         setTextureRegion(Constants.SHIP_TEXTURE_REGIONS.get(0));
         setScale(1);
+        setRotation(90);
         addWeapons(new PrimaryWeapon(Constants.PLAYER_WEAPON_COOLDOWN));
         setHitPoints(Constants.PLAYER_STARTING_HITPOINTS);
     }
