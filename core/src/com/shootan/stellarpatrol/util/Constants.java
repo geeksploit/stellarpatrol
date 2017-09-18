@@ -22,6 +22,7 @@ public class Constants {
     public static final float WORLD_SIZE = 10;
 
     public static final float WEAPON_DEFAULT_COOLDOWN = 5;
+    public static final float BULLET_MAX_VELOCITY = 10f;
 
     private static final float HARD_SPAWN_COOLDOWN = .075f;
     private static final float MEDIUM_SPAWN_COOLDOWN = HARD_SPAWN_COOLDOWN / 2;

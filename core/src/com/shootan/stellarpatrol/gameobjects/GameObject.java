@@ -12,6 +12,9 @@ public abstract class GameObject {
     private Vector2 acceleration;
     private Vector2 velocity;
     private Vector2 position;
+
+    private float scaleX;
+    private float scaleY;
     private TextureRegion textureRegion;
 
     public GameObject(Vector2 position) {
@@ -44,5 +47,14 @@ public abstract class GameObject {
 
     public void setVelocity(Vector2 velocity) {
         this.velocity = velocity;
+    }
+
+    public void setScale(float scale) {
+        setScale(scale, scale);
+    }
+
+    public void setScale(float scaleX, float scaleY) {
+        this.scaleX = scaleX;
+        this.scaleY = scaleY;
     }
 }
