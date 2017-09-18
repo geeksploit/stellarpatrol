@@ -5,4 +5,16 @@ package com.shootan.stellarpatrol.gameobjects.bullets;
  */
 
 public class BulletFactory {
+
+    private static BulletFactory instance;
+
+    private BulletFactory() {
+    }
+
+    public BulletFactory getInstance() {
+        if (instance == null) {
+            instance = new BulletFactory();
+        }
+        return instance;
+    }
 }
