@@ -1,5 +1,6 @@
 package com.shootan.stellarpatrol.gameobjects;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.DelayedRemovalArray;
 
 /**
@@ -17,6 +18,12 @@ public final class GameObjectsContainer {
     public void update (float deltaTime) {
         for (int i = 0; i < gameObjects.size; i++) {
             gameObjects.get(i).update(deltaTime);
+        }
+    }
+
+    public void draw (SpriteBatch spriteBatch) {
+        for (int i = 0; i < gameObjects.size; i++) {
+            gameObjects.get(i).draw(spriteBatch);
         }
     }
 }
