@@ -1,5 +1,6 @@
 package com.shootan.stellarpatrol.screens;
 
+import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -12,7 +13,7 @@ import com.shootan.stellarpatrol.util.Constants;
  * Created by geeksploit on 17.09.2017.
  */
 
-public class CombatScreen implements Screen {
+public class CombatScreen extends InputAdapter implements Screen {
 
     private StellarPatrolGame game;
 
