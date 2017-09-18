@@ -42,7 +42,7 @@ abstract class AbstractWeapon implements Weapon {
     public Array<Bullet> shoot(float deltaTime, Vector2 parentPosition, float parentAngle) {
         bullets.clear();
         if (isReadyToShoot(deltaTime)) {
-            bullets.addAll(BulletFactory.getInstance().makeBullets(bulletClass, parentPosition, parentAngle));
+            bullets.addAll(BulletFactory.getInstance().makeBullets(this, parentPosition, parentAngle));
         }
         return bullets;
     }

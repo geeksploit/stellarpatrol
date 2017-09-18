@@ -2,6 +2,7 @@ package com.shootan.stellarpatrol.util;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Array;
 
 /**
@@ -55,5 +56,15 @@ public class Constants {
         add(new Texture("backgrounds/background_1.jpg"));
         add(new Texture("backgrounds/background_2.jpg"));
         add(new Texture("backgrounds/background_3.jpg"));
+    }};
+
+    public static final Array<TextureRegion> BULLET_TEXTURE_REGIONS = new Array<TextureRegion>() {{
+        add(new TextureRegion(new Texture("bullets/bullet_0.png")));
+        add(new TextureRegion(new Texture("bullets/bullet_1.png")));
+        add(new TextureRegion(new Texture("bullets/bullet_2.png")));
+        add(new TextureRegion(new Texture("bullets/bullet_3.png")));
+        add(new TextureRegion(new Texture("bullets/bullet_4.png")));
+        add(new TextureRegion(new Texture("bullets/bullet_5.png")));
+        add(new TextureRegion(new Texture("bullets/bullet_6.png")));
     }};
 }
