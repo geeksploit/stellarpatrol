@@ -5,4 +5,8 @@ package com.shootan.stellarpatrol.equipment.weapons;
  */
 
 public final class PrimaryWeapon extends AbstractWeapon {
+
+    public PrimaryWeapon(float reloadCooldown) {
+        setReloadCooldown(reloadCooldown);
+    }
 }
