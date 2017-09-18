@@ -69,7 +69,8 @@ public abstract class GameObject {
     }
 
     public void draw(SpriteBatch spriteBatch) {
-
+        spriteBatch.draw(textureRegion, position.x - .5f, position.y - .5f, .5f, .5f, 1, 1,
+                getAspectRatio() * scaleX, scaleY, getTextureRotation());
     }
 
     private float getAspectRatio() {
