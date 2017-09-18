@@ -29,4 +29,8 @@ public abstract class Ship extends GameObject {
     public void setHitPoints(float hitPoints) {
         this.hitPoints = hitPoints;
     }
+
+    public void addWeapons(Weapon...weapons) {
+        this.weapons.addAll(weapons);
+    }
 }
