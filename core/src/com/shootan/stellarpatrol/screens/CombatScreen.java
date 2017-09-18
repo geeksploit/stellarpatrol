@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.shootan.stellarpatrol.StellarPatrolGame;
+import com.shootan.stellarpatrol.gameobjects.GameObjectsContainer;
 import com.shootan.stellarpatrol.util.Constants;
 
 /**
@@ -20,6 +21,8 @@ public class CombatScreen implements Screen {
 
     private Texture backgroundTexture;
 
+    private GameObjectsContainer gameObjectsContainer;
+
     public CombatScreen(StellarPatrolGame game) {
         this.game = game;
     }
@@ -30,6 +33,8 @@ public class CombatScreen implements Screen {
         spriteBatch = new SpriteBatch();
 
         backgroundTexture = Constants.BACKGROUND.random();
+
+        gameObjectsContainer = new GameObjectsContainer();
     }
 
     @Override
