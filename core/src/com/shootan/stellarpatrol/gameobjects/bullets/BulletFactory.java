@@ -2,6 +2,7 @@ package com.shootan.stellarpatrol.gameobjects.bullets;
 
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
+import com.shootan.stellarpatrol.equipment.weapons.PrimaryWeapon;
 import com.shootan.stellarpatrol.equipment.weapons.Weapon;
 
 /**
@@ -26,6 +27,9 @@ public class BulletFactory {
 
     public Array<Bullet> makeBullets(Weapon weapon, Vector2 position, float angle) {
         bullets.clear();
+        if (weapon instanceof PrimaryWeapon) {
+            bullets.add(new BulletPrimary(position.cpy(), angle));
+        }
         return bullets;
     }
 }
