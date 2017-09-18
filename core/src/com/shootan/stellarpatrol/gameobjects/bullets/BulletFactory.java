@@ -2,7 +2,6 @@ package com.shootan.stellarpatrol.gameobjects.bullets;
 
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
-import com.shootan.stellarpatrol.gameobjects.GameObject;
 
 /**
  * Created by geeksploit on 18.09.2017.
@@ -11,10 +10,10 @@ import com.shootan.stellarpatrol.gameobjects.GameObject;
 public class BulletFactory {
 
     private static BulletFactory instance;
-    private Array<GameObject> bullets;
+    private Array<Bullet> bullets;
 
     private BulletFactory() {
-        bullets = new Array<GameObject>();
+        bullets = new Array<Bullet>();
     }
 
     public static BulletFactory getInstance() {
@@ -24,7 +23,7 @@ public class BulletFactory {
         return instance;
     }
 
-    public Array<GameObject> makeBullets(Class bulletClass, Vector2 position, float angle) {
+    public Array<Bullet> makeBullets(Class bulletClass, Vector2 position, float angle) {
         bullets.clear();
         return bullets;
     }
