@@ -9,7 +9,17 @@ import com.shootan.stellarpatrol.gameobjects.GameObject;
 
 public abstract class Ship extends GameObject {
 
+    private float hitPoints;
+
     public Ship(Vector2 position) {
         super(position);
+    }
+
+    public float getHitPoints() {
+        return hitPoints;
+    }
+
+    public void setHitPoints(float hitPoints) {
+        this.hitPoints = hitPoints;
     }
 }
