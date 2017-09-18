@@ -23,6 +23,8 @@ public class Constants {
     public static final float WORLD_SIZE = 10;
 
     public static final float WEAPON_DEFAULT_COOLDOWN = 5;
+    public static final float PLAYER_WEAPON_COOLDOWN = WEAPON_DEFAULT_COOLDOWN / 10;
+    public static final float PLAYER_STARTING_HITPOINTS = 300;
     public static final float BULLET_MAX_VELOCITY = 10f;
 
     private static final float HARD_SPAWN_COOLDOWN = .075f;
@@ -66,5 +68,13 @@ public class Constants {
         add(new TextureRegion(new Texture("bullets/bullet_4.png")));
         add(new TextureRegion(new Texture("bullets/bullet_5.png")));
         add(new TextureRegion(new Texture("bullets/bullet_6.png")));
+    }};
+    
+    public static final Array<TextureRegion> SHIP_TEXTURE_REGIONS = new Array<TextureRegion>() {{
+        add(new TextureRegion(new Texture("ships/ship_0.png")));
+        add(new TextureRegion(new Texture("ships/ship_1.png")));
+        add(new TextureRegion(new Texture("ships/ship_2.png")));
+        add(new TextureRegion(new Texture("ships/ship_3.png")));
+        add(new TextureRegion(new Texture("ships/ship_4.png")));
     }};
 }
