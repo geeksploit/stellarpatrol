@@ -67,4 +67,12 @@ public class Constants {
         add(new TextureRegion(new Texture("bullets/bullet_5.png")));
         add(new TextureRegion(new Texture("bullets/bullet_6.png")));
     }};
+    
+    public static final Array<TextureRegion> SHIP_TEXTURE_REGIONS = new Array<TextureRegion>() {{
+        add(new TextureRegion(new Texture("ships/ship_0.png")));
+        add(new TextureRegion(new Texture("ships/ship_1.png")));
+        add(new TextureRegion(new Texture("ships/ship_2.png")));
+        add(new TextureRegion(new Texture("ships/ship_3.png")));
+        add(new TextureRegion(new Texture("ships/ship_4.png")));
+    }};
 }
