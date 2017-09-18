@@ -17,7 +17,7 @@ public class BulletFactory {
         bullets = new Array<GameObject>();
     }
 
-    public BulletFactory getInstance() {
+    public static BulletFactory getInstance() {
         if (instance == null) {
             instance = new BulletFactory();
         }
