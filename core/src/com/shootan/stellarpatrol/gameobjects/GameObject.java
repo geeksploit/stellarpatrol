@@ -12,6 +12,7 @@ public abstract class GameObject {
     private Vector2 acceleration;
     private Vector2 velocity;
     private Vector2 position;
+    private float rotation;
 
     private float scaleX;
     private float scaleY;
@@ -56,5 +57,13 @@ public abstract class GameObject {
     public void setScale(float scaleX, float scaleY) {
         this.scaleX = scaleX;
         this.scaleY = scaleY;
+    }
+
+    public float getRotation() {
+        return rotation;
+    }
+
+    public void setRotation(float rotation) {
+        this.rotation = rotation;
     }
 }
