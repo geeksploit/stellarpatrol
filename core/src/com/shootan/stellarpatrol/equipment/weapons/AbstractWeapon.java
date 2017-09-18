@@ -4,7 +4,9 @@ import com.badlogic.gdx.math.Matrix3;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 import com.shootan.stellarpatrol.gameobjects.GameObject;
+import com.shootan.stellarpatrol.gameobjects.bullets.Bullet;
 import com.shootan.stellarpatrol.gameobjects.bullets.BulletFactory;
+import com.shootan.stellarpatrol.util.Constants;
 
 /**
  * Created by geeksploit on 17.09.2017.
@@ -19,7 +21,11 @@ abstract class AbstractWeapon implements Weapon {
     private float reloadCooldownTimeout;
 
     AbstractWeapon() {
-         bullets = new Array<GameObject>();
+        reloadCooldown = Constants.WEAPON_DEFAULT_COOLDOWN;
+        bulletClass = Bullet.class;
+        originTransformMatrix = new Matrix3();
+        bullets = new Array<GameObject>();
+        reloadCooldownTimeout = reloadCooldown / 2;
     }
 
     @Override
