@@ -75,4 +75,8 @@ public abstract class GameObject {
     private float getAspectRatio() {
         return textureRegion.getRegionWidth() / textureRegion.getRegionHeight();
     }
+
+    private float getTextureRotation() {
+        return rotation - 90;
+    }
 }
