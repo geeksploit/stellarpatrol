@@ -1,5 +1,6 @@
 package com.shootan.stellarpatrol.gameobjects.bullets;
 
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 import com.shootan.stellarpatrol.gameobjects.GameObject;
 
@@ -21,5 +22,10 @@ public class BulletFactory {
             instance = new BulletFactory();
         }
         return instance;
+    }
+
+    public Array<GameObject> makeBullets(Class bulletClass, Vector2 position, float angle) {
+        bullets.clear();
+        return bullets;
     }
 }
