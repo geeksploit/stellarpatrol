@@ -68,6 +68,11 @@ public abstract class GameObject {
         this.rotation = rotation;
     }
 
+    public void update(float deltaTime) {
+        getVelocity().mulAdd(getAcceleration(), deltaTime);
+        getPosition().mulAdd(getVelocity(), deltaTime);
+    }
+
     public void draw(SpriteBatch spriteBatch) {
         spriteBatch.draw(textureRegion, position.x - .5f, position.y - .5f, .5f, .5f, 1, 1,
                 getAspectRatio() * scaleX, scaleY, getTextureRotation());
