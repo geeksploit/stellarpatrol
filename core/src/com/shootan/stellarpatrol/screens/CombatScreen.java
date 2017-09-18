@@ -1,5 +1,6 @@
 package com.shootan.stellarpatrol.screens;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
@@ -30,6 +31,8 @@ public class CombatScreen extends InputAdapter implements Screen {
 
     @Override
     public void show() {
+        Gdx.input.setInputProcessor(this);
+
         combatViewport = new ExtendViewport(Constants.WORLD_SIZE, Constants.WORLD_SIZE);
         spriteBatch = new SpriteBatch();
 
