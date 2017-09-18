@@ -1,6 +1,8 @@
 package com.shootan.stellarpatrol.gameobjects.ships;
 
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.Array;
+import com.shootan.stellarpatrol.equipment.weapons.Weapon;
 import com.shootan.stellarpatrol.gameobjects.GameObject;
 
 /**
@@ -10,9 +12,11 @@ import com.shootan.stellarpatrol.gameobjects.GameObject;
 public abstract class Ship extends GameObject {
 
     private float hitPoints;
+    private Array<Weapon> weapons;
 
     public Ship(Vector2 position) {
         super(position);
+        weapons = new Array<Weapon>();
     }
 
     public float getHitPoints() {
