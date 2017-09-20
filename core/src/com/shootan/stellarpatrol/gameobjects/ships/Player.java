@@ -21,4 +21,12 @@ public final class Player extends Ship {
         addWeapons(new PrimaryWeapon(Constants.PLAYER_WEAPON_COOLDOWN));
         setHitPoints(Constants.PLAYER_STARTING_HITPOINTS);
     }
+
+    public Vector2 getDestination() {
+        return destination;
+    }
+
+    public void setDestination(float x, float y) {
+        this.destination.set(x, y);
+    }
 }
