@@ -51,5 +51,6 @@ public final class Player extends Ship {
         } else {
             getVelocity().set(course.scl(3));
         }
+        setRotation(course.angle());
     }
 }
