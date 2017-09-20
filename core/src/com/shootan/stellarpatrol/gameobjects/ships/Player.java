@@ -34,5 +34,10 @@ public final class Player extends Ship {
     public void update(float deltaTime) {
         super.update(deltaTime);
         course.set(getDestination().cpy().sub(getPosition()));
+        if (course.epsilonEquals(Vector2.Zero, Constants.WORLD_SIZE / 128)) {
+            getVelocity().set(Vector2.Zero);
+        } else {
+            getVelocity().set(course.scl(3));
+        }
     }
 }
