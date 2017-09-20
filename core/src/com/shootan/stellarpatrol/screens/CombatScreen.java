@@ -1,6 +1,7 @@
 package com.shootan.stellarpatrol.screens;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
@@ -85,8 +86,10 @@ public class CombatScreen extends InputAdapter implements Screen {
 
     @Override
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+        if (button != Input.Buttons.LEFT || pointer > 0) return false;
+        isDragging = true;
         combatViewport.unproject(gameObjectsContainer.preparePlayerDestination(screenX, screenY));
-        return super.touchDown(screenX, screenY, pointer, button);
+        return isDragging;
     }
 
     @Override
