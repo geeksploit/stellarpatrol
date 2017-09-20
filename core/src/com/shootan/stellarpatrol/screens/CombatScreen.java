@@ -25,6 +25,8 @@ public class CombatScreen extends InputAdapter implements Screen {
 
     private GameObjectsContainer gameObjectsContainer;
 
+    private boolean isDragging;
+
     public CombatScreen(StellarPatrolGame game) {
         this.game = game;
     }
