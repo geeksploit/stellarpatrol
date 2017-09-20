@@ -10,6 +10,9 @@ import com.shootan.stellarpatrol.util.Constants;
 
 public final class Player extends Ship {
 
+    private Vector2 destination = new Vector2();
+    private Vector2 course = new Vector2();
+
     public Player(Vector2 position) {
         super(position);
         setTextureRegion(Constants.SHIP_TEXTURE_REGIONS.get(0));
