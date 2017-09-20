@@ -9,4 +9,11 @@ public final class ShipFactory {
     private static ShipFactory instance;
 
     private ShipFactory() {}
+
+    public static ShipFactory getInstance() {
+        if (instance == null) {
+            instance = new ShipFactory();
+        }
+        return instance;
+    }
 }
