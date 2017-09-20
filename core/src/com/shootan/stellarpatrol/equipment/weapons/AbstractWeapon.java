@@ -44,6 +44,11 @@ abstract class AbstractWeapon implements Weapon {
         if (isReadyToShoot(deltaTime)) {
             bullets.addAll(BulletFactory.getInstance().makeBullets(this, parentPosition, parentAngle));
         }
+        for (int i = 0; i < bullets.size; i++) {
+            Bullet b = bullets.get(i);
+            getOriginTransformMatrix().getTranslation(b.getPosition()).rotate(parentAngle).add(parentPosition);
+            b.getVelocity().rotate(getOriginTransformMatrix().getRotation());
+        }
         return bullets;
     }
 

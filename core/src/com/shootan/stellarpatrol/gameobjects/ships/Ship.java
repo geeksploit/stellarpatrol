@@ -39,6 +39,10 @@ public abstract class Ship extends GameObject {
         for (int i = 0; i < weapons.size; i++) {
             bullets.addAll(weapons.get(i).shoot(deltaTime, getPosition(), getRotation()));
         }
+        for (int i = 0; i < bullets.size; i++) {
+            Bullet b = bullets.get(i);
+            b.getVelocity().mulAdd(getVelocity(), .75f);
+        }
         return bullets;
     }
 }
