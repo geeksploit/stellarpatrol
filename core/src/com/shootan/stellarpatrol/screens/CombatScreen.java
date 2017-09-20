@@ -92,4 +92,9 @@ public class CombatScreen extends InputAdapter implements Screen {
         combatViewport.unproject(gameObjectsContainer.preparePlayerDestination(screenX, screenY));
         return super.touchDragged(screenX, screenY, pointer);
     }
+
+    @Override
+    public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+        return super.touchUp(screenX, screenY, pointer, button);
+    }
 }
