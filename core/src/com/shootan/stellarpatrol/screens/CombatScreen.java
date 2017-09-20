@@ -1,5 +1,8 @@
 package com.shootan.stellarpatrol.screens;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
+import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -12,7 +15,7 @@ import com.shootan.stellarpatrol.util.Constants;
  * Created by geeksploit on 17.09.2017.
  */
 
-public class CombatScreen implements Screen {
+public class CombatScreen extends InputAdapter implements Screen {
 
     private StellarPatrolGame game;
 
@@ -23,12 +26,16 @@ public class CombatScreen implements Screen {
 
     private GameObjectsContainer gameObjectsContainer;
 
+    private boolean isDragging;
+
     public CombatScreen(StellarPatrolGame game) {
         this.game = game;
     }
 
     @Override
     public void show() {
+        Gdx.input.setInputProcessor(this);
+
         combatViewport = new ExtendViewport(Constants.WORLD_SIZE, Constants.WORLD_SIZE);
         spriteBatch = new SpriteBatch();
 
@@ -75,5 +82,28 @@ public class CombatScreen implements Screen {
     @Override
     public void dispose() {
 
+    }
+
+    @Override
+    public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+        if (button != Input.Buttons.LEFT || pointer > 0) return false;
+        isDragging = true;
+        combatViewport.unproject(gameObjectsContainer.preparePlayerDestination(screenX, screenY));
+        return true;
+    }
+
+    @Override
+    public boolean touchDragged(int screenX, int screenY, int pointer) {
+        if (!isDragging) return false;
+        combatViewport.unproject(gameObjectsContainer.preparePlayerDestination(screenX, screenY));
+        return true;
+    }
+
+    @Override
+    public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+        if (button != Input.Buttons.LEFT || pointer > 0) return false;
+        isDragging = false;
+        combatViewport.unproject(gameObjectsContainer.preparePlayerDestination(screenX, screenY));
+        return true;
     }
 }
