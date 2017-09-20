@@ -21,4 +21,8 @@ public final class ShipFactory {
         }
         return instance;
     }
+
+    public Array<Ship> makeShip() {
+        return ships;
+    }
 }
