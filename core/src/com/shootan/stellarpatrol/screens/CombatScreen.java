@@ -80,4 +80,9 @@ public class CombatScreen extends InputAdapter implements Screen {
     public void dispose() {
 
     }
+
+    @Override
+    public boolean touchDragged(int screenX, int screenY, int pointer) {
+        return super.touchDragged(screenX, screenY, pointer);
+    }
 }
