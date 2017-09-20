@@ -7,4 +7,6 @@ package com.shootan.stellarpatrol.gameobjects.ships;
 public final class ShipFactory {
 
     private static ShipFactory instance;
+
+    private ShipFactory() {}
 }
