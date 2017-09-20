@@ -31,4 +31,9 @@ public final class GameObjectsContainer {
             gameObjects.get(i).draw(spriteBatch);
         }
     }
+
+    public Vector2 preparePlayerDestination(float x, float y) {
+        player.setDestination(x, y);
+        return player.getDestination();
+    }
 }
