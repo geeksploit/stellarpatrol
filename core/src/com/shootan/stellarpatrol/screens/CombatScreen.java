@@ -89,14 +89,14 @@ public class CombatScreen extends InputAdapter implements Screen {
         if (button != Input.Buttons.LEFT || pointer > 0) return false;
         isDragging = true;
         combatViewport.unproject(gameObjectsContainer.preparePlayerDestination(screenX, screenY));
-        return isDragging;
+        return true;
     }
 
     @Override
     public boolean touchDragged(int screenX, int screenY, int pointer) {
         if (!isDragging) return false;
         combatViewport.unproject(gameObjectsContainer.preparePlayerDestination(screenX, screenY));
-        return isDragging;
+        return true;
     }
 
     @Override
