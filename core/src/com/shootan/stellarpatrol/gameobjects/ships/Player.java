@@ -33,5 +33,6 @@ public final class Player extends Ship {
     @Override
     public void update(float deltaTime) {
         super.update(deltaTime);
+        course.set(getDestination().cpy().sub(getPosition()));
     }
 }
