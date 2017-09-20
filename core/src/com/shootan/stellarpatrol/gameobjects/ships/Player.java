@@ -21,9 +21,16 @@ public final class Player extends Ship {
         setRotation(90);
 
         Weapon w1 = new PrimaryWeapon(Constants.PLAYER_WEAPON_COOLDOWN / 2);
+        w1.getOriginTransformMatrix().rotate(40);
         w1.getOriginTransformMatrix().translate(.5f, 0);
+        w1.getOriginTransformMatrix().rotate(-41);
 
-        addWeapons(w1);
+        Weapon w2 = new PrimaryWeapon(Constants.PLAYER_WEAPON_COOLDOWN / 2);
+        w2.getOriginTransformMatrix().rotate(-40);
+        w2.getOriginTransformMatrix().translate(.5f, 0);
+        w2.getOriginTransformMatrix().rotate(41);
+
+        addWeapons(w1, w2);
         setHitPoints(Constants.PLAYER_STARTING_HITPOINTS);
     }
 
