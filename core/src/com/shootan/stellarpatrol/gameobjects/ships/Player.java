@@ -29,4 +29,9 @@ public final class Player extends Ship {
     public void setDestination(float x, float y) {
         this.destination.set(x, y);
     }
+
+    @Override
+    public void update(float deltaTime) {
+        super.update(deltaTime);
+    }
 }
