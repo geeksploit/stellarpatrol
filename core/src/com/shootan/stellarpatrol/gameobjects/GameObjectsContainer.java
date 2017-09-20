@@ -11,7 +11,7 @@ import com.shootan.stellarpatrol.gameobjects.ships.Player;
 public final class GameObjectsContainer {
 
     private DelayedRemovalArray<GameObject> gameObjects;
-    Player player;
+    private Player player;
 
     public GameObjectsContainer() {
         gameObjects = new DelayedRemovalArray<GameObject>();
