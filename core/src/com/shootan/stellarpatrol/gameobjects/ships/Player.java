@@ -11,9 +11,6 @@ import com.shootan.stellarpatrol.util.Constants;
 
 public final class Player extends Ship {
 
-    private Vector2 destination = new Vector2();
-    private Vector2 course = new Vector2();
-
     public Player(Vector2 position) {
         super(position);
         setTextureRegion(Constants.SHIP_TEXTURE_REGIONS.get(0));
@@ -32,25 +29,5 @@ public final class Player extends Ship {
 
         addWeapons(w1, w2);
         setHitPoints(Constants.PLAYER_STARTING_HITPOINTS);
-    }
-
-    public Vector2 getDestination() {
-        return destination;
-    }
-
-    public void setDestination(float x, float y) {
-        this.destination.set(x, y);
-    }
-
-    @Override
-    public void update(float deltaTime) {
-        super.update(deltaTime);
-        course.set(getDestination().cpy().sub(getPosition()));
-        if (course.epsilonEquals(Vector2.Zero, Constants.WORLD_SIZE / 128)) {
-            getVelocity().set(Vector2.Zero);
-        } else {
-            getVelocity().set(course.scl(3));
-        }
-        setRotation(course.angle());
     }
 }

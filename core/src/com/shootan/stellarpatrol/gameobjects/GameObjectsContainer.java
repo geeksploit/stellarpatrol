@@ -5,6 +5,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.DelayedRemovalArray;
 import com.shootan.stellarpatrol.gameobjects.ships.Player;
 import com.shootan.stellarpatrol.gameobjects.ships.Ship;
+import com.shootan.stellarpatrol.gameobjects.ships.ShipFactory;
 
 /**
  * Created by geeksploit on 18.09.2017.
@@ -33,6 +34,11 @@ public final class GameObjectsContainer {
                 gameObjects.addAll(ship.shootWeapons(deltaTime));
             }
         }
+
+        gameObjects.addAll(ShipFactory.getInstance().makeShip());
+
+        gameObjects.removeValue(player, true);
+        gameObjects.add(player);
     }
 
     public void draw (SpriteBatch spriteBatch) {
@@ -42,7 +48,6 @@ public final class GameObjectsContainer {
     }
 
     public Vector2 preparePlayerDestination(float x, float y) {
-        player.setDestination(x, y);
-        return player.getDestination();
+        return player.getDestination().set(x, y);
     }
 }
