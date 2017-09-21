@@ -32,5 +32,6 @@ public class StellarPatrolGame extends Game {
     }
 
 	public void gameOver() {
+        setDifficultyScreen();
 	}
 }
