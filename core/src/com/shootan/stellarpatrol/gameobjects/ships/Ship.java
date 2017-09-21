@@ -74,5 +74,6 @@ public abstract class Ship extends GameObject {
         } else {
             getVelocity().set(course.scl(3));
         }
+        setRotation(getCourse().angle());
     }
 }
