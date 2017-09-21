@@ -23,6 +23,7 @@ public final class ShipFactory {
     }
 
     public Array<Ship> makeShip() {
+        ships.clear();
         return ships;
     }
 }
