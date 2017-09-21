@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
@@ -117,5 +118,6 @@ public class CombatScreen extends InputAdapter implements Screen {
                 gameObjectsContainer.getPlayerPosition().x,
                 halfWorldWidth,
                 Constants.WORLD_SIZE - halfWorldWidth);
+        OrthographicCamera camera = (OrthographicCamera) combatViewport.getCamera();
     }
 }
