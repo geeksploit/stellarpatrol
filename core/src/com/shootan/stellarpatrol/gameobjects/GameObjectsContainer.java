@@ -54,7 +54,8 @@ public final class GameObjectsContainer {
             for (int j = 0; j < gameObjects.size; j++) {
                 GameObject gameObject = gameObjects.get(j);
 
-                if (gameObject instanceof Bullet) {
+                if (gameObject instanceof Bullet
+                        || gameObject == bullet.getParent()) {
                     continue;
                 }
             }
