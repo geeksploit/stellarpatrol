@@ -106,4 +106,8 @@ public class CombatScreen extends InputAdapter implements Screen {
         combatViewport.unproject(gameObjectsContainer.preparePlayerDestination(screenX, screenY));
         return true;
     }
+
+    private void cameraFollowPlayer() {
+
+    }
 }
