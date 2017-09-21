@@ -55,7 +55,8 @@ public final class GameObjectsContainer {
                 GameObject gameObject = gameObjects.get(j);
 
                 if (gameObject instanceof Bullet
-                        || gameObject == bullet.getParent()) {
+                        || gameObject == bullet.getParent()
+                        || !gameObject.getPosition().epsilonEquals(bullet.getPosition(), .3f)) {
                     continue;
                 }
             }
