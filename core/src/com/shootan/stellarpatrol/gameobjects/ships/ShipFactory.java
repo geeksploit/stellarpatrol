@@ -1,5 +1,6 @@
 package com.shootan.stellarpatrol.gameobjects.ships;
 
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.utils.Array;
 
 /**
@@ -24,6 +25,8 @@ public final class ShipFactory {
 
     public Array<Ship> makeShip() {
         ships.clear();
+        float random = MathUtils.random();
+
         return ships;
     }
 }
