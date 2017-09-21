@@ -2,7 +2,9 @@ package com.shootan.stellarpatrol.gameobjects;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.DelayedRemovalArray;
+import com.shootan.stellarpatrol.gameobjects.bullets.Bullet;
 import com.shootan.stellarpatrol.gameobjects.ships.Player;
 import com.shootan.stellarpatrol.gameobjects.ships.Ship;
 import com.shootan.stellarpatrol.gameobjects.ships.ShipFactory;
@@ -14,10 +16,12 @@ import com.shootan.stellarpatrol.gameobjects.ships.ShipFactory;
 public final class GameObjectsContainer {
 
     private DelayedRemovalArray<GameObject> gameObjects;
+    private Array<Bullet> bullets;
     private Player player;
 
     public GameObjectsContainer() {
         gameObjects = new DelayedRemovalArray<GameObject>();
+        bullets = new Array<Bullet>();
         this.player = new Player(new Vector2());
         gameObjects.add(player);
     }
