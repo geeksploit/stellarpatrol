@@ -59,6 +59,10 @@ public final class GameObjectsContainer {
                         || !gameObject.getPosition().epsilonEquals(bullet.getPosition(), .3f)) {
                     continue;
                 }
+
+                if (bullet.getParent() instanceof Player) {
+
+                }
             }
         }
 
