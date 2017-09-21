@@ -23,6 +23,7 @@ public abstract class GameObject {
         this.acceleration = new Vector2();
         this.velocity = new Vector2();
         this.position = position;
+        setScale(1);
     }
 
     public Vector2 getPosition() {
