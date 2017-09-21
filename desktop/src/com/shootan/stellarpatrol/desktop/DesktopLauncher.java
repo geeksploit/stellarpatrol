@@ -12,6 +12,9 @@ public class DesktopLauncher {
 		config.addIcon("icons/icon_32x32.png", Files.FileType.Internal);
 		config.addIcon("icons/icon_16x16.png", Files.FileType.Internal);
 		config.title = "Stellar Patrol";
+
+		float aspectRatio;
+
 		new LwjglApplication(new StellarPatrolGame(), config);
 	}
 }
