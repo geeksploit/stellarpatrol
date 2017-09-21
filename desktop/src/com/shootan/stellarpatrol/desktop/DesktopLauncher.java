@@ -19,6 +19,8 @@ public class DesktopLauncher {
 //		aspectRatio = 8 / 5f;
 //		aspectRatio = 5 / 3f;
 //		aspectRatio = 16 / 9f;
+		config.height = 700;
+		config.width = (int) (config.height / aspectRatio);
 
 		new LwjglApplication(new StellarPatrolGame(), config);
 	}
