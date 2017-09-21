@@ -109,5 +109,6 @@ public class CombatScreen extends InputAdapter implements Screen {
 
     private void cameraFollowPlayer() {
         float aspectRatio = (float) Gdx.graphics.getWidth() / Gdx.graphics.getHeight();
+        float halfWorldWidth = combatViewport.getWorldWidth() * aspectRatio / 2;
     }
 }
