@@ -68,7 +68,7 @@ public abstract class Ship extends GameObject {
     @Override
     public void update(float deltaTime) {
         super.update(deltaTime);
-        getCourse().set(getDestination().cpy().sub(getPosition()));
+        getCourse().set(getDestination()).sub(getPosition());
         if (getCourse().epsilonEquals(Vector2.Zero, .1f)) {
             getVelocity().set(Vector2.Zero);
         } else {
