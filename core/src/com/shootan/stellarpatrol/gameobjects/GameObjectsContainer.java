@@ -42,7 +42,6 @@ public final class GameObjectsContainer {
     }
 
     public Vector2 preparePlayerDestination(float x, float y) {
-        player.setDestination(x, y);
-        return player.getDestination();
+        return player.getDestination().set(x, y);
     }
 }
