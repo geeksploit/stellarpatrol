@@ -64,4 +64,9 @@ public abstract class Ship extends GameObject {
         }
         return bullets;
     }
+
+    @Override
+    public void update(float deltaTime) {
+        super.update(deltaTime);
+    }
 }
