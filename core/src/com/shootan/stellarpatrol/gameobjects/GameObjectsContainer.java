@@ -27,6 +27,8 @@ public final class GameObjectsContainer {
     }
 
     public void update (float deltaTime) {
+        gameObjects.begin();
+
         for (int i = 0; i < gameObjects.size; i++) {
             gameObjects.get(i).update(deltaTime);
         }
@@ -43,6 +45,8 @@ public final class GameObjectsContainer {
 
         gameObjects.removeValue(player, true);
         gameObjects.add(player);
+
+        gameObjects.end();
     }
 
     public void draw (SpriteBatch spriteBatch) {
