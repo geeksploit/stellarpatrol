@@ -36,6 +36,9 @@ public final class GameObjectsContainer {
         }
 
         gameObjects.addAll(ShipFactory.getInstance().makeShip());
+
+        gameObjects.removeValue(player, true);
+        gameObjects.add(player);
     }
 
     public void draw (SpriteBatch spriteBatch) {
