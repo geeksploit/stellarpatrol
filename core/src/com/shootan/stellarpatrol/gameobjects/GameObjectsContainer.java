@@ -66,6 +66,9 @@ public final class GameObjectsContainer {
                         gameObjects.removeValue(bullet, true);
                         Enemy e = (Enemy) gameObject;
                         e.setHitPoints(e.getHitPoints() - 1);
+                        if (e.getHitPoints() <= 0) {
+                            gameObjects.removeValue(e, true);
+                        }
                     }
                 }
             }
