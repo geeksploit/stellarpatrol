@@ -99,6 +99,7 @@ public final class GameObjectsContainer {
                     || gameObject.getPosition().x > Constants.WORLD_SIZE + 1
                     || gameObject.getPosition().y < -1
                     || gameObject.getPosition().y > Constants.WORLD_SIZE + 1) {
+                gameObjects.removeValue(gameObject, true);
             }
         }
 
