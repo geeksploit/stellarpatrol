@@ -57,6 +57,8 @@ public class CombatScreen extends InputAdapter implements Screen {
             gameObjectsContainer.draw(spriteBatch);
         }
         spriteBatch.end();
+
+        cameraFollowPlayer();
     }
 
     @Override
