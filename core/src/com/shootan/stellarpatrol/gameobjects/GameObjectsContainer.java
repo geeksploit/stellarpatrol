@@ -1,9 +1,11 @@
 package com.shootan.stellarpatrol.gameobjects;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.DelayedRemovalArray;
+import com.shootan.stellarpatrol.StellarPatrolGame;
 import com.shootan.stellarpatrol.gameobjects.bullets.Bullet;
 import com.shootan.stellarpatrol.gameobjects.ships.Enemy;
 import com.shootan.stellarpatrol.gameobjects.ships.Player;
@@ -77,6 +79,9 @@ public final class GameObjectsContainer {
                         gameObjects.removeValue(bullet, true);
                         Player p = (Player) gameObject;
                         p.setHitPoints(p.getHitPoints() - 1);
+                        if (p.getHitPoints() <= 0) {
+                            ((StellarPatrolGame) Gdx.app.getApplicationListener()).gameOver();
+                        }
                     }
                 }
             }
