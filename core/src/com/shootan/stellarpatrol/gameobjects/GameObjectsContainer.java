@@ -41,6 +41,8 @@ public final class GameObjectsContainer {
             }
         }
 
+        bullets.clear();
+
         gameObjects.addAll(ShipFactory.getInstance().makeShip());
 
         gameObjects.removeValue(player, true);
