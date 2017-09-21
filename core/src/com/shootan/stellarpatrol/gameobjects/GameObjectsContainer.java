@@ -71,6 +71,10 @@ public final class GameObjectsContainer {
                         }
                     }
                 }
+
+                if (bullet.getParent() instanceof Enemy) {
+
+                }
             }
         }
 
