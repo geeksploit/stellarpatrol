@@ -119,5 +119,6 @@ public class CombatScreen extends InputAdapter implements Screen {
                 halfWorldWidth,
                 Constants.WORLD_SIZE - halfWorldWidth);
         OrthographicCamera camera = (OrthographicCamera) combatViewport.getCamera();
+        camera.position.x = MathUtils.lerp(camera.position.x, targetPositionX, .1f);
     }
 }
