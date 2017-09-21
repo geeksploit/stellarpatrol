@@ -3,6 +3,8 @@ package com.shootan.stellarpatrol.gameobjects.ships;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
+import com.shootan.stellarpatrol.equipment.weapons.PrimaryWeapon;
+import com.shootan.stellarpatrol.equipment.weapons.Weapon;
 import com.shootan.stellarpatrol.util.Constants;
 
 /**
@@ -58,6 +60,11 @@ public final class ShipFactory {
                     MathUtils.random(0, Constants.WORLD_SIZE),
                     MathUtils.random(0, Constants.WORLD_SIZE));
             ship.setTextureRegion(Constants.SHIP_TEXTURE_REGIONS.get(3));
+
+            Weapon w1 = new PrimaryWeapon(Constants.PLAYER_WEAPON_COOLDOWN / 2);
+            w1.getOriginTransformMatrix().translate(.5f, 0);
+            ship.addWeapons(w1);
+
             ships.add(ship);
         } else if (random < .1f) {
             Enemy ship;
@@ -68,6 +75,19 @@ public final class ShipFactory {
                     MathUtils.random(0, Constants.WORLD_SIZE),
                     MathUtils.random(0, Constants.WORLD_SIZE));
             ship.setTextureRegion(Constants.SHIP_TEXTURE_REGIONS.get(4));
+
+            Weapon w1 = new PrimaryWeapon(Constants.PLAYER_WEAPON_COOLDOWN / 2);
+            w1.getOriginTransformMatrix().rotate(40);
+            w1.getOriginTransformMatrix().translate(.5f, 0);
+            w1.getOriginTransformMatrix().rotate(-41);
+
+            Weapon w2 = new PrimaryWeapon(Constants.PLAYER_WEAPON_COOLDOWN / 2);
+            w2.getOriginTransformMatrix().rotate(-40);
+            w2.getOriginTransformMatrix().translate(.5f, 0);
+            w2.getOriginTransformMatrix().rotate(41);
+
+            ship.addWeapons(w1, w2);
+
             ships.add(ship);
         }
 
