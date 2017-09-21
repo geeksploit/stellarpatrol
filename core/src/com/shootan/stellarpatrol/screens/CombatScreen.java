@@ -6,6 +6,7 @@ import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.utils.viewport.FillViewport;
 import com.shootan.stellarpatrol.StellarPatrolGame;
 import com.shootan.stellarpatrol.gameobjects.GameObjectsContainer;
@@ -112,5 +113,9 @@ public class CombatScreen extends InputAdapter implements Screen {
     private void cameraFollowPlayer() {
         float aspectRatio = (float) Gdx.graphics.getWidth() / Gdx.graphics.getHeight();
         float halfWorldWidth = combatViewport.getWorldWidth() * aspectRatio / 2;
+        float targetPositionX = MathUtils.clamp(
+                gameObjectsContainer.getPlayerPosition().x,
+                halfWorldWidth,
+                Constants.WORLD_SIZE - halfWorldWidth);
     }
 }
