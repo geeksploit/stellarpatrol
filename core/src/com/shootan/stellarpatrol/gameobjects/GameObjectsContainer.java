@@ -73,7 +73,9 @@ public final class GameObjectsContainer {
                 }
 
                 if (bullet.getParent() instanceof Enemy) {
-
+                    if (gameObject instanceof Player) {
+                        gameObjects.removeValue(bullet, true);
+                    }
                 }
             }
         }
