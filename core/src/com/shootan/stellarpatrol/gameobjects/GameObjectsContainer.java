@@ -48,6 +48,10 @@ public final class GameObjectsContainer {
             }
         }
 
+        for (int i = 0; i < bullets.size; i++) {
+            Bullet bullet = bullets.get(i);
+        }
+
         gameObjects.addAll(ShipFactory.getInstance().makeShip());
 
         gameObjects.removeValue(player, true);
