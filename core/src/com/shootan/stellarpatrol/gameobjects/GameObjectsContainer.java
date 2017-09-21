@@ -64,6 +64,8 @@ public final class GameObjectsContainer {
                 if (bullet.getParent() instanceof Player) {
                     if (gameObject instanceof Enemy) {
                         gameObjects.removeValue(bullet, true);
+                        Enemy e = (Enemy) gameObject;
+                        e.setHitPoints(e.getHitPoints() - 1);
                     }
                 }
             }
