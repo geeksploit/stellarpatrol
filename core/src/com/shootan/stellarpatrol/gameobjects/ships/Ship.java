@@ -12,6 +12,9 @@ import com.shootan.stellarpatrol.gameobjects.bullets.Bullet;
 
 public abstract class Ship extends GameObject {
 
+    private Vector2 course = new Vector2();
+    private Vector2 destination = new Vector2();
+
     private float hitPoints;
     private Array<Weapon> weapons;
     private Array<Bullet> bullets;
