@@ -50,6 +50,10 @@ public final class GameObjectsContainer {
 
         for (int i = 0; i < bullets.size; i++) {
             Bullet bullet = bullets.get(i);
+
+            for (int j = 0; j < gameObjects.size; j++) {
+                GameObject gameObject = gameObjects.get(j);
+            }
         }
 
         gameObjects.addAll(ShipFactory.getInstance().makeShip());
