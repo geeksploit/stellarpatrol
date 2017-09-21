@@ -60,6 +60,7 @@ public abstract class Ship extends GameObject {
         }
         for (int i = 0; i < bullets.size; i++) {
             Bullet b = bullets.get(i);
+            b.setParent(this);
             b.getVelocity().mulAdd(getVelocity(), .75f);
         }
         return bullets;
