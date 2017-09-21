@@ -14,6 +14,11 @@ public class DesktopLauncher {
 		config.title = "Stellar Patrol";
 
 		float aspectRatio;
+		aspectRatio = 4 / 3f;
+//		aspectRatio = 3 / 2f;
+//		aspectRatio = 8 / 5f;
+//		aspectRatio = 5 / 3f;
+//		aspectRatio = 16 / 9f;
 
 		new LwjglApplication(new StellarPatrolGame(), config);
 	}
