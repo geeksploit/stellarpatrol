@@ -2,6 +2,7 @@ package com.shootan.stellarpatrol.gameobjects.bullets;
 
 import com.badlogic.gdx.math.Vector2;
 import com.shootan.stellarpatrol.gameobjects.GameObject;
+import com.shootan.stellarpatrol.gameobjects.ships.Ship;
 import com.shootan.stellarpatrol.util.Constants;
 
 /**
@@ -9,6 +10,8 @@ import com.shootan.stellarpatrol.util.Constants;
  */
 
 public abstract class Bullet extends GameObject {
+
+    private Ship parent;
 
     public Bullet(Vector2 position, float angle) {
         super(position);
