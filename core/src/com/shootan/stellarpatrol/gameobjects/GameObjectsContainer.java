@@ -42,6 +42,11 @@ public final class GameObjectsContainer {
         }
 
         bullets.clear();
+        for (int i = 0; i < gameObjects.size; i++) {
+            if (gameObjects.get(i) instanceof  Bullet) {
+                bullets.add((Bullet) gameObjects.get(i));
+            }
+        }
 
         gameObjects.addAll(ShipFactory.getInstance().makeShip());
 
