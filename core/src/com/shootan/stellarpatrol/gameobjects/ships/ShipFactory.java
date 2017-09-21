@@ -39,6 +39,36 @@ public final class ShipFactory {
                     MathUtils.random(0, Constants.WORLD_SIZE));
             ship.setTextureRegion(Constants.SHIP_TEXTURE_REGIONS.get(1));
             ships.add(ship);
+        } else if (random < .075f) {
+            Enemy ship;
+            ship = new Enemy(new Vector2(
+                    MathUtils.random(0, Constants.WORLD_SIZE),
+                    Constants.WORLD_SIZE));
+            ship.getDestination().set(
+                    MathUtils.random(0, Constants.WORLD_SIZE),
+                    MathUtils.random(0, Constants.WORLD_SIZE));
+            ship.setTextureRegion(Constants.SHIP_TEXTURE_REGIONS.get(2));
+            ships.add(ship);
+        } else if (random < .09f) {
+            Enemy ship;
+            ship = new Enemy(new Vector2(
+                    MathUtils.random(0, Constants.WORLD_SIZE),
+                    Constants.WORLD_SIZE));
+            ship.getDestination().set(
+                    MathUtils.random(0, Constants.WORLD_SIZE),
+                    MathUtils.random(0, Constants.WORLD_SIZE));
+            ship.setTextureRegion(Constants.SHIP_TEXTURE_REGIONS.get(3));
+            ships.add(ship);
+        } else if (random < .1f) {
+            Enemy ship;
+            ship = new Enemy(new Vector2(
+                    MathUtils.random(0, Constants.WORLD_SIZE),
+                    Constants.WORLD_SIZE));
+            ship.getDestination().set(
+                    MathUtils.random(0, Constants.WORLD_SIZE),
+                    MathUtils.random(0, Constants.WORLD_SIZE));
+            ship.setTextureRegion(Constants.SHIP_TEXTURE_REGIONS.get(4));
+            ships.add(ship);
         }
 
         return ships;
