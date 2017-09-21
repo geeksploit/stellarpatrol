@@ -11,6 +11,7 @@ import com.shootan.stellarpatrol.gameobjects.ships.Enemy;
 import com.shootan.stellarpatrol.gameobjects.ships.Player;
 import com.shootan.stellarpatrol.gameobjects.ships.Ship;
 import com.shootan.stellarpatrol.gameobjects.ships.ShipFactory;
+import com.shootan.stellarpatrol.util.Constants;
 
 /**
  * Created by geeksploit on 18.09.2017.
@@ -91,6 +92,15 @@ public final class GameObjectsContainer {
 
         gameObjects.removeValue(player, true);
         gameObjects.add(player);
+
+        for (int i = 0; i < gameObjects.size; i++) {
+            GameObject gameObject = gameObjects.get(i);
+            if (gameObject.getPosition().x < -1
+                    || gameObject.getPosition().x > Constants.WORLD_SIZE + 1
+                    || gameObject.getPosition().y < -1
+                    || gameObject.getPosition().y > Constants.WORLD_SIZE + 1) {
+            }
+        }
 
         gameObjects.end();
     }
