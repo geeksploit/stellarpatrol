@@ -25,6 +25,22 @@ public abstract class Ship extends GameObject {
         bullets = new Array<Bullet>();
     }
 
+    public Vector2 getCourse() {
+        return course;
+    }
+
+    public void setCourse(Vector2 course) {
+        this.course = course;
+    }
+
+    public Vector2 getDestination() {
+        return destination;
+    }
+
+    public void setDestination(Vector2 destination) {
+        this.destination = destination;
+    }
+
     public float getHitPoints() {
         return hitPoints;
     }
