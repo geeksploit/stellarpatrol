@@ -25,4 +25,12 @@ public abstract class Bullet extends GameObject {
     public void setVelocity(Vector2 velocity) {
         super.setVelocity(velocity.clamp(0, Constants.BULLET_MAX_VELOCITY));
     }
+
+    public void setParent(Ship parent) {
+        this.parent = parent;
+    }
+
+    public Ship getParent() {
+        return parent;
+    }
 }
