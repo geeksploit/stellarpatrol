@@ -50,4 +50,8 @@ public final class GameObjectsContainer {
     public Vector2 preparePlayerDestination(float x, float y) {
         return player.getDestination().set(x, y);
     }
+
+    public Vector2 getPlayerPosition() {
+        return player.getPosition();
+    }
 }

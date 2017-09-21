@@ -4,9 +4,11 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.utils.viewport.ExtendViewport;
+import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.utils.viewport.FillViewport;
 import com.shootan.stellarpatrol.StellarPatrolGame;
 import com.shootan.stellarpatrol.gameobjects.GameObjectsContainer;
 import com.shootan.stellarpatrol.util.Constants;
@@ -19,7 +21,7 @@ public class CombatScreen extends InputAdapter implements Screen {
 
     private StellarPatrolGame game;
 
-    private ExtendViewport combatViewport;
+    private FillViewport combatViewport;
     private SpriteBatch spriteBatch;
 
     private Texture backgroundTexture;
@@ -36,7 +38,7 @@ public class CombatScreen extends InputAdapter implements Screen {
     public void show() {
         Gdx.input.setInputProcessor(this);
 
-        combatViewport = new ExtendViewport(Constants.WORLD_SIZE, Constants.WORLD_SIZE);
+        combatViewport = new FillViewport(Constants.WORLD_SIZE, Constants.WORLD_SIZE);
         spriteBatch = new SpriteBatch();
 
         backgroundTexture = Constants.BACKGROUND.random();
@@ -57,6 +59,8 @@ public class CombatScreen extends InputAdapter implements Screen {
             gameObjectsContainer.draw(spriteBatch);
         }
         spriteBatch.end();
+
+        cameraFollowPlayer();
     }
 
     @Override
@@ -105,5 +109,16 @@ public class CombatScreen extends InputAdapter implements Screen {
         isDragging = false;
         combatViewport.unproject(gameObjectsContainer.preparePlayerDestination(screenX, screenY));
         return true;
+    }
+
+    private void cameraFollowPlayer() {
+        float aspectRatio = (float) Gdx.graphics.getWidth() / Gdx.graphics.getHeight();
+        float halfWorldWidth = combatViewport.getWorldWidth() * aspectRatio / 2;
+        float targetPositionX = MathUtils.clamp(
+                gameObjectsContainer.getPlayerPosition().x,
+                halfWorldWidth,
+                Constants.WORLD_SIZE - halfWorldWidth);
+        OrthographicCamera camera = (OrthographicCamera) combatViewport.getCamera();
+        camera.position.x = MathUtils.lerp(camera.position.x, targetPositionX, .1f);
     }
 }
