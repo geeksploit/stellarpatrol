@@ -5,6 +5,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.DelayedRemovalArray;
 import com.shootan.stellarpatrol.gameobjects.bullets.Bullet;
+import com.shootan.stellarpatrol.gameobjects.ships.Enemy;
 import com.shootan.stellarpatrol.gameobjects.ships.Player;
 import com.shootan.stellarpatrol.gameobjects.ships.Ship;
 import com.shootan.stellarpatrol.gameobjects.ships.ShipFactory;
@@ -61,7 +62,9 @@ public final class GameObjectsContainer {
                 }
 
                 if (bullet.getParent() instanceof Player) {
-
+                    if (gameObject instanceof Enemy) {
+                        gameObjects.removeValue(bullet, true);
+                    }
                 }
             }
         }
