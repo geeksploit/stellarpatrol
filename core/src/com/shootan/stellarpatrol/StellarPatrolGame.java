@@ -30,4 +30,8 @@ public class StellarPatrolGame extends Game {
     public void setDifficulty(Difficulty difficulty) {
         this.difficulty = difficulty;
     }
+
+	public void gameOver() {
+        setDifficultyScreen();
+	}
 }
