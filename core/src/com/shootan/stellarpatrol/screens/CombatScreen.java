@@ -56,6 +56,7 @@ public class CombatScreen extends InputAdapter implements Screen {
         gameObjectsContainer = new GameObjectsContainer();
 
         combatGui = new CombatGui();
+        combatGui.setViewport(guiViewport);
     }
 
     @Override
