@@ -58,6 +58,7 @@ public class CombatScreen extends InputAdapter implements Screen {
         combatGui = new CombatGui();
         combatGui.setViewport(guiViewport);
         combatGui.setSpriteBatch(spriteBatch);
+        combatGui.setFont(bitmapFont);
     }
 
     @Override
