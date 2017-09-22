@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.utils.viewport.FillViewport;
+import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.shootan.stellarpatrol.StellarPatrolGame;
 import com.shootan.stellarpatrol.gameobjects.GameObjectsContainer;
 import com.shootan.stellarpatrol.util.Constants;
@@ -22,6 +23,7 @@ public class CombatScreen extends InputAdapter implements Screen {
     private StellarPatrolGame game;
 
     private FillViewport combatViewport;
+    private ScreenViewport guiViewport;
     private SpriteBatch spriteBatch;
 
     private Texture backgroundTexture;
@@ -39,6 +41,8 @@ public class CombatScreen extends InputAdapter implements Screen {
         Gdx.input.setInputProcessor(this);
 
         combatViewport = new FillViewport(Constants.WORLD_SIZE, Constants.WORLD_SIZE);
+        guiViewport = new ScreenViewport();
+
         spriteBatch = new SpriteBatch();
 
         backgroundTexture = Constants.BACKGROUND.random();
