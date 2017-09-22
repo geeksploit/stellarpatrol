@@ -2,6 +2,7 @@ package com.shootan.stellarpatrol.screens.overlays;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.shootan.stellarpatrol.StellarPatrolGame;
 
 /**
@@ -14,6 +15,7 @@ public class CombatGui {
     private StringBuilder stringBuilder;
 
     private BitmapFont bitmapFont;
+    private ScreenViewport screenViewport;
 
     public CombatGui() {
         game = (StellarPatrolGame) Gdx.app.getApplicationListener();
@@ -22,5 +24,9 @@ public class CombatGui {
 
     public void setFont(BitmapFont font) {
         this.bitmapFont = font;
+    }
+
+    public void setViewport(ScreenViewport viewport) {
+        this.screenViewport = viewport;
     }
 }
