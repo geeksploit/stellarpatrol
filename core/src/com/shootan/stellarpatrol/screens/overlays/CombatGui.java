@@ -25,7 +25,7 @@ public class CombatGui {
     }
 
     public void render(float delta) {
-
+        screenViewport.apply();
     }
 
     public void setFont(BitmapFont font) {
