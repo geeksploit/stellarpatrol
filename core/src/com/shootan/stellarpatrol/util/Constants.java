@@ -1,5 +1,7 @@
 package com.shootan.stellarpatrol.util;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -76,5 +78,9 @@ public class Constants {
         add(new TextureRegion(new Texture("ships/ship_2.png")));
         add(new TextureRegion(new Texture("ships/ship_3.png")));
         add(new TextureRegion(new Texture("ships/ship_4.png")));
+    }};
+
+    public static final Array<Sound> WEAPON_SOUNDS = new Array<Sound>() {{
+        add(Gdx.audio.newSound(Gdx.files.internal("sfx/weapon/laser_0.mp3")));
     }};
 }
