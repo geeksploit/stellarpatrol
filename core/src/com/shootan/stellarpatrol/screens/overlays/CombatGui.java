@@ -2,6 +2,7 @@ package com.shootan.stellarpatrol.screens.overlays;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.shootan.stellarpatrol.StellarPatrolGame;
 
@@ -16,6 +17,7 @@ public class CombatGui {
 
     private BitmapFont bitmapFont;
     private ScreenViewport screenViewport;
+    private SpriteBatch spriteBatch;
 
     public CombatGui() {
         game = (StellarPatrolGame) Gdx.app.getApplicationListener();
@@ -28,5 +30,9 @@ public class CombatGui {
 
     public void setViewport(ScreenViewport viewport) {
         this.screenViewport = viewport;
+    }
+
+    public void setSpriteBatch(SpriteBatch spriteBatch) {
+        this.spriteBatch = spriteBatch;
     }
 }
