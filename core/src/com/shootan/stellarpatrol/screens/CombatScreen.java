@@ -6,11 +6,14 @@ import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.utils.viewport.FillViewport;
+import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.shootan.stellarpatrol.StellarPatrolGame;
 import com.shootan.stellarpatrol.gameobjects.GameObjectsContainer;
+import com.shootan.stellarpatrol.screens.overlays.CombatGui;
 import com.shootan.stellarpatrol.util.Constants;
 
 /**
@@ -22,10 +25,13 @@ public class CombatScreen extends InputAdapter implements Screen {
     private StellarPatrolGame game;
 
     private FillViewport combatViewport;
+    private ScreenViewport guiViewport;
     private SpriteBatch spriteBatch;
 
+    private BitmapFont bitmapFont;
     private Texture backgroundTexture;
 
+    private CombatGui combatGui;
     private GameObjectsContainer gameObjectsContainer;
 
     private boolean isDragging;
@@ -39,11 +45,20 @@ public class CombatScreen extends InputAdapter implements Screen {
         Gdx.input.setInputProcessor(this);
 
         combatViewport = new FillViewport(Constants.WORLD_SIZE, Constants.WORLD_SIZE);
+        guiViewport = new ScreenViewport();
+
         spriteBatch = new SpriteBatch();
 
+        bitmapFont = new BitmapFont();
+        bitmapFont.getRegion().getTexture().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
         backgroundTexture = Constants.BACKGROUND.random();
 
         gameObjectsContainer = new GameObjectsContainer();
+
+        combatGui = new CombatGui();
+        combatGui.setViewport(guiViewport);
+        combatGui.setSpriteBatch(spriteBatch);
+        combatGui.setFont(bitmapFont);
     }
 
     @Override
@@ -60,12 +75,15 @@ public class CombatScreen extends InputAdapter implements Screen {
         }
         spriteBatch.end();
 
+        combatGui.render(delta);
+
         cameraFollowPlayer();
     }
 
     @Override
     public void resize(int width, int height) {
         combatViewport.update(width, height, true);
+        guiViewport.update(width, height, true);
     }
 
     @Override
@@ -85,7 +103,9 @@ public class CombatScreen extends InputAdapter implements Screen {
 
     @Override
     public void dispose() {
-
+        backgroundTexture.dispose();
+        bitmapFont.dispose();
+        spriteBatch.dispose();
     }
 
     @Override
