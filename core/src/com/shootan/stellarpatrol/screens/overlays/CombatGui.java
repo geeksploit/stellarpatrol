@@ -24,6 +24,10 @@ public class CombatGui {
         stringBuilder = new StringBuilder();
     }
 
+    public void render(float delta) {
+
+    }
+
     public void setFont(BitmapFont font) {
         this.bitmapFont = font;
     }
