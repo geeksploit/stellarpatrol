@@ -93,6 +93,7 @@ public class CombatScreen extends InputAdapter implements Screen {
 
     @Override
     public void dispose() {
+        backgroundTexture.dispose();
         bitmapFont.dispose();
     }
 
