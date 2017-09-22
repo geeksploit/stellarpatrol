@@ -30,6 +30,7 @@ public abstract class Bullet extends GameObject {
 
     public void setParent(Ship parent) {
         this.parent = parent;
+        long soundId = sound.play();
     }
 
     public Ship getParent() {
