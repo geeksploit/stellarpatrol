@@ -6,4 +6,6 @@ package com.shootan.stellarpatrol.screens.overlays;
 
 public class CombatGui {
 
+    public CombatGui() {
+    }
 }
