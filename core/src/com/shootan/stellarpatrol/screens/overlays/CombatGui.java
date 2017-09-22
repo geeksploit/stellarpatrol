@@ -32,6 +32,7 @@ public class CombatGui {
         {
             int margin = 20;
             stringBuilder.setLength(0);
+            stringBuilder.append("\nDifficulty: ").append(game.getDifficulty().label);
         }
         spriteBatch.end();
     }
