@@ -13,6 +13,7 @@ import com.badlogic.gdx.utils.viewport.FillViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.shootan.stellarpatrol.StellarPatrolGame;
 import com.shootan.stellarpatrol.gameobjects.GameObjectsContainer;
+import com.shootan.stellarpatrol.screens.overlays.CombatGui;
 import com.shootan.stellarpatrol.util.Constants;
 
 /**
@@ -30,6 +31,7 @@ public class CombatScreen extends InputAdapter implements Screen {
     private BitmapFont bitmapFont;
     private Texture backgroundTexture;
 
+    private CombatGui combatGui;
     private GameObjectsContainer gameObjectsContainer;
 
     private boolean isDragging;
@@ -52,6 +54,8 @@ public class CombatScreen extends InputAdapter implements Screen {
         backgroundTexture = Constants.BACKGROUND.random();
 
         gameObjectsContainer = new GameObjectsContainer();
+
+        combatGui = new CombatGui();
     }
 
     @Override
