@@ -10,8 +10,10 @@ import com.shootan.stellarpatrol.StellarPatrolGame;
 public class CombatGui {
 
     private StellarPatrolGame game;
+    private StringBuilder stringBuilder;
 
     public CombatGui() {
         game = (StellarPatrolGame) Gdx.app.getApplicationListener();
+        stringBuilder = new StringBuilder();
     }
 }
