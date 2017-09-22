@@ -48,6 +48,7 @@ public class CombatScreen extends InputAdapter implements Screen {
         spriteBatch = new SpriteBatch();
 
         bitmapFont = new BitmapFont();
+        bitmapFont.getRegion().getTexture().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
         backgroundTexture = Constants.BACKGROUND.random();
 
         gameObjectsContainer = new GameObjectsContainer();
