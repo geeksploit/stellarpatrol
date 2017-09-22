@@ -3,6 +3,7 @@ package com.shootan.stellarpatrol.screens.overlays;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.shootan.stellarpatrol.StellarPatrolGame;
 
@@ -33,6 +34,7 @@ public class CombatGui {
             int margin = 20;
             stringBuilder.setLength(0);
             stringBuilder.append("\nDifficulty: ").append(game.getDifficulty().label);
+            bitmapFont.draw(spriteBatch, stringBuilder, margin, screenViewport.getScreenHeight() - margin, 0, Align.left, false);
         }
         spriteBatch.end();
     }
