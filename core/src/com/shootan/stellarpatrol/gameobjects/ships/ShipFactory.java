@@ -29,7 +29,7 @@ public final class ShipFactory {
 
     public Array<Ship> makeShip() {
         ships.clear();
-        float random = MathUtils.random();
+        float random = MathUtils.random() * 10;
 
         if (random < .05f) {
             Enemy ship;
