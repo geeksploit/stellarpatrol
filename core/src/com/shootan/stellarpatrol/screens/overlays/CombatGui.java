@@ -31,6 +31,7 @@ public class CombatGui {
         spriteBatch.begin();
         {
             int margin = 20;
+            stringBuilder.setLength(0);
         }
         spriteBatch.end();
     }
