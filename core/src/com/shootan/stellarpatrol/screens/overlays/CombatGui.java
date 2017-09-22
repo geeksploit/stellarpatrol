@@ -26,6 +26,7 @@ public class CombatGui {
 
     public void render(float delta) {
         screenViewport.apply();
+        spriteBatch.setProjectionMatrix(screenViewport.getCamera().combined);
     }
 
     public void setFont(BitmapFont font) {
