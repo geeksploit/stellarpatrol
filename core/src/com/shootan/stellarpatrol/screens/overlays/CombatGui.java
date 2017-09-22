@@ -29,7 +29,9 @@ public class CombatGui {
         spriteBatch.setProjectionMatrix(screenViewport.getCamera().combined);
 
         spriteBatch.begin();
-
+        {
+            int margin = 20;
+        }
         spriteBatch.end();
     }
 
