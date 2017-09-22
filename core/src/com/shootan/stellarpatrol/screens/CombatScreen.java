@@ -6,6 +6,7 @@ import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.utils.viewport.FillViewport;
@@ -26,6 +27,7 @@ public class CombatScreen extends InputAdapter implements Screen {
     private ScreenViewport guiViewport;
     private SpriteBatch spriteBatch;
 
+    private BitmapFont bitmapFont;
     private Texture backgroundTexture;
 
     private GameObjectsContainer gameObjectsContainer;
@@ -45,6 +47,7 @@ public class CombatScreen extends InputAdapter implements Screen {
 
         spriteBatch = new SpriteBatch();
 
+        bitmapFont = new BitmapFont();
         backgroundTexture = Constants.BACKGROUND.random();
 
         gameObjectsContainer = new GameObjectsContainer();
