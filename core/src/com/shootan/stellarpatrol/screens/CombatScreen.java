@@ -94,7 +94,7 @@ public class CombatScreen extends InputAdapter implements Screen {
 
     @Override
     public void pause() {
-
+        backgroundMusicLoop.pause();
     }
 
     @Override
