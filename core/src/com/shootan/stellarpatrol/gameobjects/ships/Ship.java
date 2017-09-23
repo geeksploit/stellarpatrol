@@ -82,5 +82,6 @@ public abstract class Ship extends GameObject {
     @Override
     public void reset() {
         super.reset();
+        weapons.clear();
     }
 }
