@@ -6,6 +6,7 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Pool;
 import com.shootan.stellarpatrol.equipment.weapons.PrimaryWeapon;
 import com.shootan.stellarpatrol.equipment.weapons.Weapon;
+import com.shootan.stellarpatrol.gameobjects.GameObject;
 import com.shootan.stellarpatrol.util.Constants;
 
 /**
@@ -23,7 +24,8 @@ public final class ShipFactory extends Pool {
 
     @Override
     protected Object newObject() {
-        return null;
+        GameObject gameObject = new Enemy(new Vector2());
+        return gameObject;
     }
 
     public static ShipFactory getInstance() {
