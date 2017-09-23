@@ -23,6 +23,7 @@ public class BulletFactory extends Pool {
     @Override
     protected Object newObject() {
         GameObject gameObject = new BulletPrimary(new Vector2(), 0);
+        gameObject.setPool(this);
         return gameObject;
     }
 
