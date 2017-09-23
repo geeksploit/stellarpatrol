@@ -63,6 +63,7 @@ public class CombatScreen extends InputAdapter implements Screen {
         combatGui.setFont(bitmapFont);
 
         backgroundMusicLoop = Constants.BACKGROUND_MUSIC_LOOPS.random();
+        backgroundMusicLoop.setLooping(true);
     }
 
     @Override
