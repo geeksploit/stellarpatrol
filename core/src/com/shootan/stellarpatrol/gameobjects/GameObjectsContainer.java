@@ -119,4 +119,8 @@ public final class GameObjectsContainer {
     public Vector2 getPlayerPosition() {
         return player.getPosition();
     }
+
+    private class DelayedRemovalPoolableArray extends DelayedRemovalArray<GameObject> {
+
+    }
 }
