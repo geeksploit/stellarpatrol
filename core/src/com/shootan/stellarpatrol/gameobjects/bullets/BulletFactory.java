@@ -5,6 +5,7 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Pool;
 import com.shootan.stellarpatrol.equipment.weapons.PrimaryWeapon;
 import com.shootan.stellarpatrol.equipment.weapons.Weapon;
+import com.shootan.stellarpatrol.gameobjects.GameObject;
 
 /**
  * Created by geeksploit on 18.09.2017.
@@ -21,7 +22,8 @@ public class BulletFactory extends Pool {
 
     @Override
     protected Object newObject() {
-        return null;
+        GameObject gameObject = new BulletPrimary(new Vector2(), 0);
+        return gameObject;
     }
 
     public static BulletFactory getInstance() {
