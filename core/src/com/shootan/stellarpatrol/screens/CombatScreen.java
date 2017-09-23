@@ -64,6 +64,7 @@ public class CombatScreen extends InputAdapter implements Screen {
 
         backgroundMusicLoop = Constants.BACKGROUND_MUSIC_LOOPS.random();
         backgroundMusicLoop.setLooping(true);
+        backgroundMusicLoop.play();
     }
 
     @Override
