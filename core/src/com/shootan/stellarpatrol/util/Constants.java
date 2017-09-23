@@ -1,6 +1,7 @@
 package com.shootan.stellarpatrol.util;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -82,5 +83,9 @@ public class Constants {
 
     public static final Array<Sound> WEAPON_SOUNDS = new Array<Sound>() {{
         add(Gdx.audio.newSound(Gdx.files.internal("sfx/weapon/laser_0.mp3")));
+    }};
+
+    public static final Array<Music> BACKGROUND_MUSIC_LOOPS = new Array<Music>() {{
+        add(Gdx.audio.newMusic(Gdx.files.internal("music/combat_0.mp3")));
     }};
 }
