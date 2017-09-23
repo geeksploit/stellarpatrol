@@ -11,6 +11,8 @@ import com.badlogic.gdx.utils.Pool;
 
 public abstract class GameObject implements Pool.Poolable {
 
+    private Pool<GameObject> pool;
+
     private Vector2 acceleration;
     private Vector2 velocity;
     private Vector2 position;
