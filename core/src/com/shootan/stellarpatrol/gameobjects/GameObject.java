@@ -3,12 +3,13 @@ package com.shootan.stellarpatrol.gameobjects;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.Pool;
 
 /**
  * Created by geeksploit on 17.09.2017.
  */
 
-public abstract class GameObject {
+public abstract class GameObject implements Pool.Poolable {
 
     private Vector2 acceleration;
     private Vector2 velocity;
@@ -87,5 +88,10 @@ public abstract class GameObject {
 
     private float getTextureRotation() {
         return rotation - 90;
+    }
+
+    @Override
+    public void reset() {
+
     }
 }
