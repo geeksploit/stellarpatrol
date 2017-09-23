@@ -37,7 +37,7 @@ public class BulletFactory extends Pool {
     public Array<Bullet> makeBullets(Weapon weapon, Vector2 position, float angle) {
         bullets.clear();
         if (weapon instanceof PrimaryWeapon) {
-            bullets.add(new BulletPrimary(position.cpy(), angle));
+            Bullet bullet = (Bullet) this.obtain();
         }
         return bullets;
     }
