@@ -42,9 +42,8 @@ public final class ShipFactory extends Pool {
 
         if (random < .05f) {
             Enemy ship;
-            ship = new Enemy(new Vector2(
-                    MathUtils.random(0, Constants.WORLD_SIZE),
-                    Constants.WORLD_SIZE));
+            ship = (Enemy) this.obtain();
+            ship.getPosition().set(MathUtils.random(0, Constants.WORLD_SIZE), Constants.WORLD_SIZE);
             ship.getDestination().set(
                     MathUtils.random(0, Constants.WORLD_SIZE),
                     MathUtils.random(0, Constants.WORLD_SIZE));
@@ -52,9 +51,8 @@ public final class ShipFactory extends Pool {
             ships.add(ship);
         } else if (random < .075f) {
             Enemy ship;
-            ship = new Enemy(new Vector2(
-                    MathUtils.random(0, Constants.WORLD_SIZE),
-                    Constants.WORLD_SIZE));
+            ship = (Enemy) this.obtain();
+            ship.getPosition().set(MathUtils.random(0, Constants.WORLD_SIZE), Constants.WORLD_SIZE);
             ship.getDestination().set(
                     MathUtils.random(0, Constants.WORLD_SIZE),
                     MathUtils.random(0, Constants.WORLD_SIZE));
@@ -62,9 +60,8 @@ public final class ShipFactory extends Pool {
             ships.add(ship);
         } else if (random < .09f) {
             Enemy ship;
-            ship = new Enemy(new Vector2(
-                    MathUtils.random(0, Constants.WORLD_SIZE),
-                    Constants.WORLD_SIZE));
+            ship = (Enemy) this.obtain();
+            ship.getPosition().set(MathUtils.random(0, Constants.WORLD_SIZE), Constants.WORLD_SIZE);
             ship.getDestination().set(
                     MathUtils.random(0, Constants.WORLD_SIZE),
                     MathUtils.random(0, Constants.WORLD_SIZE));
@@ -77,9 +74,8 @@ public final class ShipFactory extends Pool {
             ships.add(ship);
         } else if (random < .1f) {
             Enemy ship;
-            ship = new Enemy(new Vector2(
-                    MathUtils.random(0, Constants.WORLD_SIZE),
-                    Constants.WORLD_SIZE));
+            ship = (Enemy) this.obtain();
+            ship.getPosition().set(MathUtils.random(0, Constants.WORLD_SIZE), Constants.WORLD_SIZE);
             ship.getDestination().set(
                     MathUtils.random(0, Constants.WORLD_SIZE),
                     MathUtils.random(0, Constants.WORLD_SIZE));
