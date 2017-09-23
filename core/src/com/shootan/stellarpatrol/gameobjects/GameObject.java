@@ -101,4 +101,12 @@ public abstract class GameObject implements Pool.Poolable {
         setRotation(0);
         setScale(1);
     }
+
+    public Pool<GameObject> getPool() {
+        return pool;
+    }
+
+    public void setPool(Pool<GameObject> pool) {
+        this.pool = pool;
+    }
 }
