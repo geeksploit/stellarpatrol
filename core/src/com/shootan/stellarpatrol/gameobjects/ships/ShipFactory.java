@@ -25,6 +25,7 @@ public final class ShipFactory extends Pool {
     @Override
     protected Object newObject() {
         GameObject gameObject = new Enemy(new Vector2());
+        gameObject.setPool(this);
         return gameObject;
     }
 
