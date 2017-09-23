@@ -19,12 +19,12 @@ import com.shootan.stellarpatrol.util.Constants;
 
 public final class GameObjectsContainer {
 
-    private DelayedRemovalArray<GameObject> gameObjects;
+    private DelayedRemovalPoolableArray gameObjects;
     private Array<Bullet> bullets;
     private Player player;
 
     public GameObjectsContainer() {
-        gameObjects = new DelayedRemovalArray<GameObject>();
+        gameObjects = new DelayedRemovalPoolableArray();
         bullets = new Array<Bullet>();
         this.player = new Player(new Vector2());
         gameObjects.add(player);
