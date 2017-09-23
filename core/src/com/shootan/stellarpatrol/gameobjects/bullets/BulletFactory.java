@@ -40,6 +40,7 @@ public class BulletFactory extends Pool {
         if (weapon instanceof PrimaryWeapon) {
             Bullet bullet = (Bullet) this.obtain();
             bullet.setTextureRegion(Constants.BULLET_TEXTURE_REGIONS.get(1));
+            bullet.setScale(.4f);
         }
         return bullets;
     }
