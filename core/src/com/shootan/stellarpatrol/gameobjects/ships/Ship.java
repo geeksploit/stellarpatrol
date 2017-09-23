@@ -77,4 +77,9 @@ public abstract class Ship extends GameObject {
         }
         setRotation(getCourse().angle());
     }
+
+    @Override
+    public void reset() {
+        super.reset();
+    }
 }
