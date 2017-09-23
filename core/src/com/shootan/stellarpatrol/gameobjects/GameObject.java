@@ -94,5 +94,6 @@ public abstract class GameObject implements Pool.Poolable {
     public void reset() {
         getVelocity().set(Vector2.Zero);
         getAcceleration().set(Vector2.Zero);
+        getPosition().set(Vector2.Zero);
     }
 }
