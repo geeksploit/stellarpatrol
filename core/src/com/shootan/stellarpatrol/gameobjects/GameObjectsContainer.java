@@ -122,5 +122,10 @@ public final class GameObjectsContainer {
 
     private class DelayedRemovalPoolableArray extends DelayedRemovalArray<GameObject> {
 
+        @Override
+        public boolean removeValue(GameObject value, boolean identity) {
+            value.getPool().free(value);
+            return super.removeValue(value, identity);
+        }
     }
 }
