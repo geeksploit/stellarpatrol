@@ -43,6 +43,7 @@ public class BulletFactory extends Pool {
             bullet.setScale(.4f);
             bullet.getPosition().set(position);
             bullet.getVelocity().set(0, 5).setAngle(angle);
+            bullets.add(bullet);
         }
         return bullets;
     }
