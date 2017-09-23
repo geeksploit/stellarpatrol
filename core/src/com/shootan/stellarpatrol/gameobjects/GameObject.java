@@ -96,5 +96,6 @@ public abstract class GameObject implements Pool.Poolable {
         getAcceleration().set(Vector2.Zero);
         getPosition().set(Vector2.Zero);
         setTextureRegion(null);
+        setRotation(0);
     }
 }
