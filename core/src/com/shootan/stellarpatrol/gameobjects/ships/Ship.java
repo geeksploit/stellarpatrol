@@ -84,5 +84,6 @@ public abstract class Ship extends GameObject {
         super.reset();
         weapons.clear();
         getDestination().set(0, 0);
+        getCourse().set(0, 0);
     }
 }
