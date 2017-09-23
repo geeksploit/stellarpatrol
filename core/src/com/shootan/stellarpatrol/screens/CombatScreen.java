@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -29,6 +30,7 @@ public class CombatScreen extends InputAdapter implements Screen {
     private SpriteBatch spriteBatch;
 
     private BitmapFont bitmapFont;
+    private Music backgroundMusicLoop;
     private Texture backgroundTexture;
 
     private CombatGui combatGui;
@@ -59,6 +61,10 @@ public class CombatScreen extends InputAdapter implements Screen {
         combatGui.setViewport(guiViewport);
         combatGui.setSpriteBatch(spriteBatch);
         combatGui.setFont(bitmapFont);
+
+        backgroundMusicLoop = Constants.BACKGROUND_MUSIC_LOOPS.random();
+        backgroundMusicLoop.setLooping(true);
+        backgroundMusicLoop.play();
     }
 
     @Override
@@ -88,21 +94,22 @@ public class CombatScreen extends InputAdapter implements Screen {
 
     @Override
     public void pause() {
-
+        backgroundMusicLoop.pause();
     }
 
     @Override
     public void resume() {
-
+        backgroundMusicLoop.play();
     }
 
     @Override
     public void hide() {
-
+        backgroundMusicLoop.stop();
     }
 
     @Override
     public void dispose() {
+        backgroundMusicLoop.dispose();
         backgroundTexture.dispose();
         bitmapFont.dispose();
         spriteBatch.dispose();
