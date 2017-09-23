@@ -50,6 +50,7 @@ public abstract class Ship extends GameObject {
     }
 
     public void addWeapons(Weapon...weapons) {
+        this.weapons.clear();
         this.weapons.addAll(weapons);
     }
 
