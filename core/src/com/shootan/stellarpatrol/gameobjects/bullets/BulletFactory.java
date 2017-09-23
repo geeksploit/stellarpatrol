@@ -6,6 +6,7 @@ import com.badlogic.gdx.utils.Pool;
 import com.shootan.stellarpatrol.equipment.weapons.PrimaryWeapon;
 import com.shootan.stellarpatrol.equipment.weapons.Weapon;
 import com.shootan.stellarpatrol.gameobjects.GameObject;
+import com.shootan.stellarpatrol.util.Constants;
 
 /**
  * Created by geeksploit on 18.09.2017.
@@ -38,6 +39,7 @@ public class BulletFactory extends Pool {
         bullets.clear();
         if (weapon instanceof PrimaryWeapon) {
             Bullet bullet = (Bullet) this.obtain();
+            bullet.setTextureRegion(Constants.BULLET_TEXTURE_REGIONS.get(1));
         }
         return bullets;
     }
