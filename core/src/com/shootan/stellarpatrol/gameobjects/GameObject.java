@@ -92,6 +92,6 @@ public abstract class GameObject implements Pool.Poolable {
 
     @Override
     public void reset() {
-
+        getVelocity().set(Vector2.Zero);
     }
 }
