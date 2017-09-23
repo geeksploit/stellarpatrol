@@ -50,6 +50,7 @@ public abstract class Ship extends GameObject {
     }
 
     public void addWeapons(Weapon...weapons) {
+        this.weapons.clear();
         this.weapons.addAll(weapons);
     }
 
@@ -76,5 +77,13 @@ public abstract class Ship extends GameObject {
             getVelocity().set(getCourse().scl(3));
         }
         setRotation(getCourse().angle());
+    }
+
+    @Override
+    public void reset() {
+        super.reset();
+        weapons.clear();
+        getDestination().set(0, 0);
+        getCourse().set(0, 0);
     }
 }

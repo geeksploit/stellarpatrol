@@ -3,21 +3,30 @@ package com.shootan.stellarpatrol.gameobjects.ships;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.Pool;
 import com.shootan.stellarpatrol.equipment.weapons.PrimaryWeapon;
 import com.shootan.stellarpatrol.equipment.weapons.Weapon;
+import com.shootan.stellarpatrol.gameobjects.GameObject;
 import com.shootan.stellarpatrol.util.Constants;
 
 /**
  * Created by geeksploit on 20.09.2017.
  */
 
-public final class ShipFactory {
+public final class ShipFactory extends Pool {
 
     private static ShipFactory instance;
     private Array<Ship> ships;
 
     private ShipFactory() {
         ships = new Array<Ship>();
+    }
+
+    @Override
+    protected Object newObject() {
+        GameObject gameObject = new Enemy(new Vector2());
+        gameObject.setPool(this);
+        return gameObject;
     }
 
     public static ShipFactory getInstance() {
@@ -33,9 +42,8 @@ public final class ShipFactory {
 
         if (random < .05f) {
             Enemy ship;
-            ship = new Enemy(new Vector2(
-                    MathUtils.random(0, Constants.WORLD_SIZE),
-                    Constants.WORLD_SIZE));
+            ship = (Enemy) this.obtain();
+            ship.getPosition().set(MathUtils.random(0, Constants.WORLD_SIZE), Constants.WORLD_SIZE);
             ship.getDestination().set(
                     MathUtils.random(0, Constants.WORLD_SIZE),
                     MathUtils.random(0, Constants.WORLD_SIZE));
@@ -43,9 +51,8 @@ public final class ShipFactory {
             ships.add(ship);
         } else if (random < .075f) {
             Enemy ship;
-            ship = new Enemy(new Vector2(
-                    MathUtils.random(0, Constants.WORLD_SIZE),
-                    Constants.WORLD_SIZE));
+            ship = (Enemy) this.obtain();
+            ship.getPosition().set(MathUtils.random(0, Constants.WORLD_SIZE), Constants.WORLD_SIZE);
             ship.getDestination().set(
                     MathUtils.random(0, Constants.WORLD_SIZE),
                     MathUtils.random(0, Constants.WORLD_SIZE));
@@ -53,9 +60,8 @@ public final class ShipFactory {
             ships.add(ship);
         } else if (random < .09f) {
             Enemy ship;
-            ship = new Enemy(new Vector2(
-                    MathUtils.random(0, Constants.WORLD_SIZE),
-                    Constants.WORLD_SIZE));
+            ship = (Enemy) this.obtain();
+            ship.getPosition().set(MathUtils.random(0, Constants.WORLD_SIZE), Constants.WORLD_SIZE);
             ship.getDestination().set(
                     MathUtils.random(0, Constants.WORLD_SIZE),
                     MathUtils.random(0, Constants.WORLD_SIZE));
@@ -68,9 +74,8 @@ public final class ShipFactory {
             ships.add(ship);
         } else if (random < .1f) {
             Enemy ship;
-            ship = new Enemy(new Vector2(
-                    MathUtils.random(0, Constants.WORLD_SIZE),
-                    Constants.WORLD_SIZE));
+            ship = (Enemy) this.obtain();
+            ship.getPosition().set(MathUtils.random(0, Constants.WORLD_SIZE), Constants.WORLD_SIZE);
             ship.getDestination().set(
                     MathUtils.random(0, Constants.WORLD_SIZE),
                     MathUtils.random(0, Constants.WORLD_SIZE));

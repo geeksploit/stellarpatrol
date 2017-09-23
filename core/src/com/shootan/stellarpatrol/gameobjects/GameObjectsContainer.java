@@ -19,12 +19,12 @@ import com.shootan.stellarpatrol.util.Constants;
 
 public final class GameObjectsContainer {
 
-    private DelayedRemovalArray<GameObject> gameObjects;
+    private DelayedRemovalPoolableArray gameObjects;
     private Array<Bullet> bullets;
     private Player player;
 
     public GameObjectsContainer() {
-        gameObjects = new DelayedRemovalArray<GameObject>();
+        gameObjects = new DelayedRemovalPoolableArray();
         bullets = new Array<Bullet>();
         this.player = new Player(new Vector2());
         gameObjects.add(player);
@@ -118,5 +118,18 @@ public final class GameObjectsContainer {
 
     public Vector2 getPlayerPosition() {
         return player.getPosition();
+    }
+
+    private class DelayedRemovalPoolableArray extends DelayedRemovalArray<GameObject> {
+
+        public boolean removeValue(Player value, boolean identity) {
+            return super.removeValue(value, identity);
+        }
+
+        @Override
+        public boolean removeValue(GameObject value, boolean identity) {
+            value.getPool().free(value);
+            return super.removeValue(value, identity);
+        }
     }
 }
