@@ -41,6 +41,7 @@ public class BulletFactory extends Pool {
             Bullet bullet = (Bullet) this.obtain();
             bullet.setTextureRegion(Constants.BULLET_TEXTURE_REGIONS.get(1));
             bullet.setScale(.4f);
+            bullet.getPosition().set(position);
         }
         return bullets;
     }
